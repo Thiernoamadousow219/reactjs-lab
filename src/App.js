@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import AngularComponent from "./components/AngularComponent";
-import ReactComponent from './components/ReactComponent';
-import VueComponent from "./components/VueComponent";
+import AngularComponent from "./components/renderProps/AngularComponent";
+import ReactComponent from './components/renderProps/ReactComponent';
+import VueComponent from "./components/renderProps/VueComponent";
 
 function App() {
 

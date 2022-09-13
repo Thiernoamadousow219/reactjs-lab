@@ -1,4 +1,4 @@
-import reactLogo from '../images/reactjs.png';
+import reactLogo from '../../images/reactjs.png';
 import MouseMove from './MouseMove';
 import './style.css'
 

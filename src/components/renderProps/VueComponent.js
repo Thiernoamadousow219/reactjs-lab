@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import reactLogo from '../images/angularjs.png';
+import reactLogo from '../../images/vuejs.png';
 import MouseMove from './MouseMove';
 import './style.css'
 
-function AngularComponent() {
+function VueComponent() {
 
   return (
     <MouseMove logo={reactLogo} render={(position, logo)=>{
@@ -17,4 +16,4 @@ function AngularComponent() {
 )
 }
 
-export default AngularComponent
+export default VueComponent
