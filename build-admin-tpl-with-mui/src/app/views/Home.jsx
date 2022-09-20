@@ -1,11 +1,10 @@
-import { Box, Card, CardContent, Grid, styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
-import { borderRadius } from '@mui/system'
+import { AddOutlined } from '@mui/icons-material'
+import { Box, Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem,
+            Select, Table, TableBody, TableCell, TableContainer, 
+            TableHead, TableRow, TextField, Typography } from '@mui/material'
+
 import React from 'react'
 import AdminTemplate from './AdminTemplate'
-
-const Div = styled('div')(()=>({
-
-}))
 const tableCardHeadersStyles = {
     color: '#adb5bd',
     fontSize: '18px',
@@ -28,15 +27,29 @@ const tRowsStyles = {
         bgcolor: '#f1f3f5'
     }
 }
-
+const OPERATIONS = [
+    {
+        label: 'Achat',
+        value: 1
+    },
+    {
+        label: 'Vente',
+        value: 2
+    }
+]
 function Home() {
+    const [operation, setOperation] = React.useState(OPERATIONS[0].label);
+
+    const handleChange = (event) => {
+      setOperation(event.target.value);
+    };
   return (
     <Box>
         <Grid container spacing={2} sx={{marginBottom: '12px'}}>
                 <Grid item xs={6}>
                     <Typography component='p'
                             sx={tableCardHeadersStyles}>
-                        Vos stocks de devises
+                        Stock de devises
                     </Typography> 
                     <Grid container spacing={2}>
                         <Grid item xs={6}>
@@ -141,7 +154,31 @@ function Home() {
                     <Grid item xs={12}>
                         <Card>
                             <CardContent>
-                                                                                       
+                                <Box>
+                                    <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                                        <InputLabel>Type de l'operation</InputLabel>
+                                        <Select
+                                            value={operation}
+                                            label="Type de l'operation"
+                                            onChange={handleChange}
+                                        >
+                                            <MenuItem value={10}>Achat</MenuItem>
+                                            <MenuItem value={20}>Vente</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                                        <TextField fullWidth label="Nom" />
+                                    </FormControl>
+                                    <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                                        <TextField fullWidth label="Prenom" />
+                                    </FormControl>
+                                    <Button startIcon={<AddOutlined />}
+                                            variant='contained'
+                                            size='large'
+                                            sx={{ backgroundColor: 'primary', fontSize: 14 }}> 
+                                        Enregistrer 
+                                    </Button>
+                                </Box>                                                                                       
                             </CardContent>
                         </Card>
                     </Grid>

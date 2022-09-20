@@ -41,7 +41,6 @@ const MenuItemStyles = {
 }
 
 const MainStyles = {
-  //  bgcolor: '#F8F9FA'
   marginLeft: '100px',
   overflowX: 'hidden'
 
@@ -100,7 +99,9 @@ const AdminTemplate = WrappedComponent =>{
                 direction='row'
                 bgcolor='white'>
               <Grid item xs={1} sx={SideBarStyles}> 
-                 <img src={logo} alt='logo' height={100} />
+                 <Link to='/admin'>
+                  <img src={logo} alt='logo' height={90} style={{paddingBottom: '100px'}} />
+                 </Link>
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/admin'>
                       <ShoppingCartOutlined />
