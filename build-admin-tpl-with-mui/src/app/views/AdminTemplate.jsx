@@ -19,6 +19,7 @@ const DropDownItem = styled('div')(()=>({
 }))
 
 const SideBarStyles = { 
+  position: 'fixed',
   bgcolor: theme.palette.primary.main, 
   minHeight: '100vh',
   display: 'flex',
@@ -39,12 +40,16 @@ const MenuItemStyles = {
   }
 }
 
-const ContentStyles = {
-   bgcolor: '#F8F9FA' 
+const MainStyles = {
+  //  bgcolor: '#F8F9FA'
+  marginLeft: '100px',
 }
 
 const NavBarStyles = { 
-  bgcolor: '#fff', 
+  position: 'fixed',
+  bgcolor: '#fff',
+  width: '100%',
+  maxWidth: 'inherit !important',
   minHeight: '70px',
   display: 'flex',
   alignItems: 'center',
@@ -59,7 +64,9 @@ const NavBarStyles = {
 }
 
 const LayoutStyles = { 
-    padding: '60px 10px 0px 20px'
+   bgcolor: '#F8F9FA',
+   marginTop: '70px',
+   padding: '60px 10px 0px 20px'
 }
 const AdminTemplate = WrappedComponent =>{
 
@@ -89,7 +96,7 @@ const AdminTemplate = WrappedComponent =>{
       <Box sx={{ flexGrow: 1 }}>
           <Grid container
                 direction='row'
-                bgcolor='#DADDE2'>
+                bgcolor='white'>
               <Grid item xs={1} sx={SideBarStyles}> 
                  <img src={logo} alt='logo' height={100} />
                  <MenuItem sx={MenuItemStyles}>
@@ -107,7 +114,7 @@ const AdminTemplate = WrappedComponent =>{
                  </MenuItem>
               </Grid>
   
-              <Grid item xs={11} sx={ContentStyles}> 
+              <Grid item xs={11} sx={MainStyles}> 
                  <Grid item xs={12} sx={NavBarStyles}>
                     <NotificationsNoneOutlined sx={{color: '#adb5bd', fontSize: 32}}
                                                   onClick={openNotificationPopover}
