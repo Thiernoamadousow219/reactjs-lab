@@ -41,7 +41,7 @@ const MenuItemStyles = {
 }
 
 const ContentStyles = {
-   bgcolor: '#F8F9FA' 
+   bgcolor: '#F8F9FA'
 }
 
 const NavBarStyles = { 
