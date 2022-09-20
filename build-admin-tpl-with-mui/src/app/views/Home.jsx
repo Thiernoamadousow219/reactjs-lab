@@ -32,7 +32,13 @@ function Home() {
                 <Grid item xs={6}>
                     <Typography component='p'
                             sx={tableCardHeadersStyles}>
-                        Votre portfeuille
+                        Vos stocks de devises
+                    </Typography> 
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography component='p'
+                            sx={tableCardHeadersStyles}>
+                        Achat/Vente de devises
                     </Typography> 
                 </Grid>
         </Grid>
@@ -95,7 +101,7 @@ function Home() {
                     <CardContent>
                         <Typography component='p'
                                 sx={tableCardHeadersStyles}>
-                            L'évolution des devises
+                            Conversion de devises
                         </Typography> 
                         
                     </CardContent>

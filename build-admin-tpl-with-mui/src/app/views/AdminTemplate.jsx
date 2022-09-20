@@ -23,7 +23,7 @@ const SideBarStyles = {
   minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-between'
+  justifyContent: 'space-evenly'
 }
 
 const MenuItemStyles = {  
