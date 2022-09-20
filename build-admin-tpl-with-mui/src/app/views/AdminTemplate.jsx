@@ -43,6 +43,8 @@ const MenuItemStyles = {
 const MainStyles = {
   //  bgcolor: '#F8F9FA'
   marginLeft: '100px',
+  overflowX: 'hidden'
+
 }
 
 const NavBarStyles = { 
