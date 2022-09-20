@@ -138,10 +138,10 @@ function Home() {
                             sx={tableCardHeadersStyles}>
                         Achat/Vente de devises
                     </Typography>
-                    <Grid item xs={6}>
+                    <Grid item xs={12}>
                         <Card>
                             <CardContent>
-                                                       
+                                                                                       
                             </CardContent>
                         </Card>
                     </Grid>

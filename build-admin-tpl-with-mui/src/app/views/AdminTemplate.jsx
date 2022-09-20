@@ -22,8 +22,7 @@ const SideBarStyles = {
   bgcolor: theme.palette.primary.main, 
   minHeight: '100vh',
   display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-evenly'
+  flexDirection: 'column'
 }
 
 const MenuItemStyles = {  
@@ -41,7 +40,7 @@ const MenuItemStyles = {
 }
 
 const ContentStyles = {
-   bgcolor: '#F8F9FA'
+   bgcolor: '#F8F9FA' 
 }
 
 const NavBarStyles = { 
@@ -91,6 +90,7 @@ const AdminTemplate = WrappedComponent =>{
           <Grid container
                 direction='row'
                 bgcolor='#DADDE2'>
+
               <Grid item xs={1} sx={SideBarStyles}> 
                  <img src={logo} alt='logo' height={100} />
                  <MenuItem sx={MenuItemStyles}>
@@ -109,6 +109,7 @@ const AdminTemplate = WrappedComponent =>{
               </Grid>
   
               <Grid item xs={11} sx={ContentStyles}> 
+              
                  <Grid item xs={12} sx={NavBarStyles}>
                     <NotificationsNoneOutlined sx={{color: '#adb5bd', fontSize: 32}}
                                                   onClick={openNotificationPopover}
