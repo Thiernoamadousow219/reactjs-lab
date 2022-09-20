@@ -48,6 +48,7 @@ const MainStyles = {
 
 const NavBarStyles = { 
   position: 'fixed',
+  zIndex: '1000',
   bgcolor: '#fff',
   width: '100%',
   maxWidth: 'inherit !important',
