@@ -6,6 +6,7 @@ import React from 'react'
 import TableComponent from '../components/TableComponent'
 import AdminTemplate from './AdminTemplate'
 import {data, titles} from '../data/tableData'
+import { theme } from '../themes/theme'
 
 const cardTitle = {
     color: '#adb5bd',
