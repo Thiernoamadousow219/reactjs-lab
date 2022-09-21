@@ -56,7 +56,6 @@ const operations = [
 ]
 
 const SoldCard = ({amount, devise, style})=>{
-    console.log({...SoldCardStyled, ...style})
     return (<Card sx={{...SoldCardStyled, ...style}}>
                 <CardContent>
                     <Typography component='p' sx={SoldCardHeaderStyled}>
