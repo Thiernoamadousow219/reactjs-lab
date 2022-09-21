@@ -12,7 +12,7 @@ const tHeadCellsStyles = {
 }
 
 const tRowsStyles = {
-    '&:nth-child(even)':{
+    '&:nth-of-type(even)':{
         bgcolor: '#f1f3f5'
     }
 }
@@ -26,7 +26,7 @@ function TableComponent({data, titles}) {
                 <TableHead sx={tHeadStyles}>
                     <TableRow>
                         {(titles.length) ? titles.map((item, key)=>(
-                            <TableCell sx={tHeadCellsStyles}>{item.name}</TableCell>
+                            <TableCell key={key} sx={tHeadCellsStyles}>{item.name}</TableCell>
                         )) : <TableCell sx={tHeadCellsStyles}>#</TableCell>}
                     </TableRow>
                 </TableHead>

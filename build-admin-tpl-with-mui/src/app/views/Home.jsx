@@ -7,15 +7,40 @@ import TableComponent from '../components/TableComponent'
 import AdminTemplate from './AdminTemplate'
 import {data, titles} from '../data/tableData'
 
-const tableCardHeadersStyles = {
+const cardTitle = {
     color: '#adb5bd',
     fontSize: '18px',
     borderBottom: '1px solid #adb5bd',
     marginBottom: '32px',
 }
 
+const FormControlStyled = { marginBottom: '12px'}
+const SoldCardStyled = { bgcolor: '#5F70A7', minHeight: '120px', color: '#fff'}
+const SoldCardHeaderStyled = {
+    fontSize: '18px', 
+    fontWeight: '800',
+    textTransform: 'uppercase', 
+    marginBottom: '10px'
+}
+const SoldCardAmountStyled = {
+    backgroundColor: '#fff', 
+    color: 'black',
+    borderRadius: '50px', 
+    fontSize: '18px', 
+    width: '50px',
+    display: 'flex', 
+    justifyContent: 'center',
+    alignItems: 'center', 
+    fontWeight: '900'
+}
 
-const OPERATIONS = [
+const SoldCardContentStyled = { 
+    display: 'flex', 
+    justifyContent: 'space-between' 
+}
+
+
+const operations = [
     {
         label: 'Achat',
         value: 1
@@ -25,139 +50,71 @@ const OPERATIONS = [
         value: 2
     }
 ]
+
+const SoldCard = ({amount, devise, style})=>{
+    console.log({...SoldCardStyled, ...style})
+    return (<Card sx={{...SoldCardStyled, ...style}}>
+                <CardContent>
+                    <Typography component='p' sx={SoldCardHeaderStyled}>
+                        Solde
+                    </Typography>
+                    <Typography component='div' sx={SoldCardContentStyled}>
+                        <Typography component='div' sx={{ fontSize: '2.2rem' }}>
+                            {amount}
+                        </Typography>
+                        <Typography component='div' sx={SoldCardAmountStyled}>
+                            {devise}
+                        </Typography>
+                    </Typography>                                
+                </CardContent>
+            </Card>);
+}
+
+
 function Home() {
-    const [operation, setOperation] = React.useState(OPERATIONS[0].label);
+    const [operation, setOperation] = React.useState(operations[0].label);
 
     const handleChange = (event) => {
       setOperation(event.target.value);
     };
   return (
     <Box>
-        <Grid container spacing={2} sx={{marginBottom: '12px'}}>
+        <Grid container spacing={2} sx={{ marginBottom: '12px' }}>
             <Grid item xs={6}>
-                <Typography component='p'
-                        sx={tableCardHeadersStyles}>
+                <Typography component='p' sx={cardTitle}>
                     Stock de devises
                 </Typography> 
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
-                        <Card sx={{ bgcolor: '#5F70A7', minHeight: '120px',
-                                    color: '#fff'}}>
-                            <CardContent>
-                                <Typography component='p' sx={{fontSize: '18px', fontWeight: '800',
-                                                                textTransform: 'uppercase', marginBottom: '10px'}}>
-                                    Solde
-                                </Typography>
-                                <Typography component='div' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <Typography component='div' sx={{ fontSize: '2.2rem' }}>
-                                        1 000 000
-                                    </Typography>
-                                    <Typography component='div'
-                                                    sx={{backgroundColor: '#fff', color: 'black',
-                                                    borderRadius: '50px', fontSize: '18px', width: '50px',
-                                                    display: 'flex', justifyContent: 'center',
-                                                    alignItems: 'center', fontWeight: '900'}}>
-                                        GNF
-                                    </Typography>
-                                </Typography>                                
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Card sx={{ bgcolor: '#006C9E', minHeight: '120px',
-                                    color: '#fff'}}>
-                            <CardContent>
-                                <Typography component='p' sx={{fontSize: '18px', fontWeight: '800',
-                                                                textTransform: 'uppercase', marginBottom: '10px'}}>
-                                    Solde
-                                </Typography>
-                                <Typography component='div' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <Typography component='div' sx={{ fontSize: '2.2rem' }}>
-                                        90 000
-                                    </Typography>
-                                    <Typography component='div'
-                                                    sx={{backgroundColor: '#fff', color: 'black',
-                                                    borderRadius: '50px', fontSize: '18px', width: '50px',
-                                                    display: 'flex', justifyContent: 'center',
-                                                    alignItems: 'center', fontWeight: '900'}}>
-                                        CAD
-                                    </Typography>
-                                </Typography>                                
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Card sx={{ bgcolor: '#007D57', minHeight: '120px',
-                                    color: '#fff'}}>
-                            <CardContent>
-                                <Typography component='p' sx={{fontSize: '18px', fontWeight: '800',
-                                                                textTransform: 'uppercase', marginBottom: '10px'}}>
-                                    Solde
-                                </Typography>
-                                <Typography component='div' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <Typography component='div' sx={{ fontSize: '2.2rem' }}>
-                                        120 000
-                                    </Typography>
-                                    <Typography component='div'
-                                                    sx={{backgroundColor: '#fff', color: 'black',
-                                                    borderRadius: '50px', fontSize: '18px', width: '50px',
-                                                    display: 'flex', justifyContent: 'center',
-                                                    alignItems: 'center', fontWeight: '900'}}>
-                                        $
-                                    </Typography>
-                                </Typography>                                
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Card sx={{ bgcolor: '#334B49', minHeight: '120px',
-                                    color: '#fff'}}>
-                            <CardContent>
-                                <Typography component='p' sx={{fontSize: '18px', fontWeight: '800',
-                                                                textTransform: 'uppercase', marginBottom: '10px'}}>
-                                    Solde
-                                </Typography>
-                                <Typography component='div' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <Typography component='div' sx={{ fontSize: '2.2rem' }}>
-                                        300 000
-                                    </Typography>
-                                    <Typography component='div'
-                                                    sx={{backgroundColor: '#fff', color: 'black',
-                                                    borderRadius: '50px', fontSize: '18px', width: '50px',
-                                                    display: 'flex', justifyContent: 'center',
-                                                    alignItems: 'center', fontWeight: '900'}}>
-                                        CFA
-                                    </Typography>
-                                </Typography>                                
-                            </CardContent>
-                        </Card>
+                        <SoldCard amount={2000} devise='GNF'/>                        
                     </Grid>
                 </Grid>
             </Grid>
             <Grid item xs={6}>
-                <Typography component='p'
-                        sx={tableCardHeadersStyles}>
+                <Typography component='p' sx={cardTitle}>
                     Achat/Vente de devises
                 </Typography>
                 <Grid item xs={12}>
                     <Card>
                         <CardContent>
                             <Box>
-                                <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                                <FormControl fullWidth sx={FormControlStyled}>
                                     <InputLabel>Type de l'operation</InputLabel>
                                     <Select
                                         value={operation}
                                         label="Type de l'operation"
-                                        onChange={handleChange}
-                                    >
-                                        <MenuItem value={10}>Achat</MenuItem>
-                                        <MenuItem value={20}>Vente</MenuItem>
+                                        onChange={handleChange}>
+                                        {operations.map((operation) => (
+                                              <MenuItem key={operation.value} value={operation.label}>
+                                                  {operation.label}
+                                              </MenuItem>
+                                          ))}
                                     </Select>
                                 </FormControl>
-                                <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                                <FormControl fullWidth sx={FormControlStyled}>
                                     <TextField fullWidth label="Nom" />
                                 </FormControl>
-                                <FormControl fullWidth sx={{ marginBottom: 2 }}>
+                                <FormControl fullWidth sx={FormControlStyled}>
                                     <TextField fullWidth label="Prenom" />
                                 </FormControl>
                                 <Button startIcon={<AddOutlined />}
@@ -176,8 +133,7 @@ function Home() {
             <Grid item xs={6}>
                 <Card>
                     <CardContent>
-                        <Typography component='p'
-                                sx={tableCardHeadersStyles}>
+                        <Typography component='p' sx={cardTitle}>
                             Vos dernières opérations
                         </Typography> 
                         <TableComponent data={data} titles={titles} />
@@ -187,8 +143,7 @@ function Home() {
             <Grid item xs={6}>
                 <Card>
                     <CardContent>
-                        <Typography component='p'
-                                sx={tableCardHeadersStyles}>
+                        <Typography component='p' sx={cardTitle}>
                             Conversion de devises
                         </Typography> 
                     </CardContent>
