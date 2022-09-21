@@ -4,7 +4,6 @@ import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import { theme } from '../themes/theme';
 import { PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
 import { currencies } from '../data/currencyData';
-
 const logo = require('../assets/images/logo.png');
 
 const LeftPanel = styled('div')(({theme})=>({
@@ -28,13 +27,14 @@ const RightPanel = styled('div')({
 
 const LoginFormGroup = styled('div')({
   marginBottom: '32px',
-  width: '80%'
+  width: '80%',
 });
 
 
 const LoginBtnStyles = { 
   backgroundColor: 'primary', 
   fontSize: 14,
+  fontFamily:'ubuntu',
   "&:hover":{
     backgroundColor: theme.palette.secondary
   }
@@ -57,10 +57,10 @@ function Login() {
                   xs={6}
                   sx={{display: {xs: 'none', sm: 'none', md: 'block', lg: 'block'}}}>
                 <LeftPanel>
-                   <Typography variant='h2' component='h2' mb={8}>
+                   <Typography variant='h2' component='h2' mb={8} sx={{fontFamily:'ubuntu'}}>
                       Bienvenu chez nous !
                    </Typography>
-                   <Typography component='p' p={2} sx={{lineHeight: 1.6}}>
+                   <Typography component='p' p={2} sx={{lineHeight: 1.6 ,fontFamily:'ubuntu',letterSpacing:1.6}}>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, similique. Quae vero repudiandae iusto nesciunt tenetur asperiores, amet earum itaque quisquam harum! Recusandae consequatur in neque. Ratione maiores totam laborum.
                    </Typography>
                 </LeftPanel>
@@ -73,10 +73,10 @@ function Login() {
                 <RightPanel>
                     <Avatar src={logo} alt="logo" sx={{height: 300, width: 'auto'}} />
                     <LoginFormGroup>
-                       <TextField label="Votre numéro de telephone" 
+                       <TextField label="Votre numéro de téléphone" 
                             className="input" 
                             variant="standard" 
-                            fullWidth={true} 
+                            fullWidth={true}
                             InputProps={{
                               endAdornment: (
                                 <InputAdornment position="end">
@@ -84,7 +84,7 @@ function Login() {
                                 </InputAdornment>
                               ),
                               startAdornment: (
-                                <InputAdornment position="start">
+                                <InputAdornment  position="start">
                                   <TextField
                                           select
                                           value={currency}
@@ -93,6 +93,13 @@ function Login() {
                                           >
                                           {currencies.map((option) => (
                                               <MenuItem key={option.value} value={option.value}>
+                                              <img
+                                                loading="lazy"
+                                                width="20"
+                                                src={`https://flagcdn.com/w20/${option.value.toLowerCase()}.png`}
+                                                srcSet={`https://flagcdn.com/w40/${option.value.toLowerCase()}.png 2x`}
+                                                alt=""
+                                              />
                                                   {option.label}
                                               </MenuItem>
                                           ))}
@@ -107,6 +114,7 @@ function Login() {
                             className="input" 
                             variant="standard" 
                             type="password"
+                            sx={{fontFamily:'ubuntu'}}
                             fullWidth={true}
                             InputProps={{
                               endAdornment: (

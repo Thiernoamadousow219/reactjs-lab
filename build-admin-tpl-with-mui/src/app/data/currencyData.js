@@ -4,8 +4,8 @@ export const currencies = [
             label: '+221',
         },
         {
-            value: 'CIV',
-            label: '+222',
+            value: 'CI',
+            label: '+225',
         },
         {
             value: 'TG',
