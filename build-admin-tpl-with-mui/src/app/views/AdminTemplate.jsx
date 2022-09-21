@@ -1,5 +1,5 @@
 import { AccountCircleOutlined, FormatListBulletedOutlined, 
-  LogoutOutlined, NotificationsNoneOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+  LogoutOutlined, NotificationsNoneOutlined, SettingsOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import { Box, Grid, Popover, styled, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
@@ -114,8 +114,8 @@ const AdminTemplate = WrappedComponent =>{
                     </Link>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
-                    <Link to='/admin/historique'>
-                      <FormatListBulletedOutlined />
+                    <Link to='/admin/config'>
+                      <SettingsOutlined />
                     </Link>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
