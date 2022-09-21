@@ -3,7 +3,7 @@ import { Avatar, Box, Button, Grid, InputAdornment, MenuItem, styled, TextField,
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import { theme } from '../themes/theme';
 import { PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
-import { currencies } from '../data/currencyData';
+import { countriesCode } from '../data/countriesCodeData';
 
 const logo = require('../assets/images/logo.png');
 
@@ -42,10 +42,10 @@ const LoginBtnStyles = {
 
 function Login() {
 
-  const [currency, setCurrency] = React.useState('EUR');
+  const [countrieCode, setCountrieCode] = React.useState('EUR');
 
   const handleChange = (event) => {
-    setCurrency(event.target.value);
+    setCountrieCode(event.target.value);
   };
 
   return (
@@ -87,11 +87,11 @@ function Login() {
                                 <InputAdornment position="start">
                                   <TextField
                                           select
-                                          value={currency}
+                                          value={countrieCode}
                                           onChange={handleChange}
                                           variant="standard"
                                           >
-                                          {currencies.map((option) => (
+                                          {countriesCode.map((option) => (
                                               <MenuItem key={option.value} value={option.value}>
                                                   {option.label}
                                               </MenuItem>

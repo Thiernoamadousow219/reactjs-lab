@@ -31,20 +31,4 @@ export const data = [
         }
 ];
 
-export const titles = [
-    {
-        name: "#"
-    },
-    {
-        name: "Gerant"
-    },
-    {
-        name: "Type"
-    },
-    {
-        name: "Devise"
-    },
-    {
-        name: "Montant"
-    }
-];
+export const titles = ["#", "Gerant", "Type", "Devise", "Montant"];
