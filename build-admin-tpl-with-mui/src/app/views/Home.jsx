@@ -2,12 +2,14 @@ import { AddOutlined } from '@mui/icons-material'
 import { Box, Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem,
             Select, Table, TableBody, TableCell, TableContainer, 
             TableHead, TableRow, TextField, Typography } from '@mui/material'
-
 import React from 'react'
 import AdminTemplate from './AdminTemplate'
+import { theme } from '../themes/theme';
+// import FontFace {fontFamily: 'ubuntu'; src: local('ubuntu'),url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&family=Poppins:ital,wght@1,100;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');}
 const tableCardHeadersStyles = {
     color: '#adb5bd',
     fontSize: '18px',
+    fontFamily: theme.fontFamily.police.main,
     borderBottom: '1px solid #adb5bd',
     marginBottom: '32px',
 }
@@ -19,6 +21,7 @@ const tHeadStyles = {
 const tHeadCellsStyles = {
     fontSize: '14px',
     fontWeight: 'bold',
+    fontFamily: theme.fontFamily.police.main,
     color: '#fff'
 }
 

@@ -12,5 +12,11 @@ export const theme = createTheme({
         extra:{
             main: "#5F70A7"
         }
+    },
+    fontFamily: {
+       police:{
+        main:'ubuntu',
+       } 
     }
+    
 });
