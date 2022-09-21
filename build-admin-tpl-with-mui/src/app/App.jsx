@@ -1,5 +1,4 @@
 import React from 'react';
-import './assets/css/app.css';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './themes/theme';
 import Home from './views/Home';

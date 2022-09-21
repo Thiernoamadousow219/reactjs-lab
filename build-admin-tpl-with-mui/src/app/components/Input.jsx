@@ -2,8 +2,6 @@ import React from 'react'
 import { TextField, styled, InputAdornment, MenuItem} from '@mui/material';
 import {  PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
 import { currencies } from '../data/currencyData';
-import '../assets/css/app.css';
-
 
 export function InputText({label, required}) {
 

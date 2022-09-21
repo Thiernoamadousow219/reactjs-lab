@@ -1,5 +1,4 @@
 import React from 'react';
-import '../assets/css/app.css';
 import { Box, Button, Grid, styled, Typography } from '@mui/material';
 import { FormGroup, InputPassword, InputText } from '../components/Input';
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
@@ -16,7 +15,7 @@ const LeftPanel = styled('div')(({theme})=>({
     color: 'white',
     minHeight: '100vh',
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
-  }));
+}));
 
 const RightPanel = styled('div')({
   display: 'flex',
@@ -25,6 +24,14 @@ const RightPanel = styled('div')({
   backgroundColor: '#fff',
   color: '#727082'
 });
+
+const LoginBtnStyles = { 
+  backgroundColor: 'primary', 
+  fontSize: 14,
+  "&:hover":{
+    backgroundColor: theme.palette.secondary
+  }
+}
 
 function Login() {
 
@@ -54,7 +61,6 @@ function Login() {
                     <img src={logo} alt="logo" style={{ height: 300 }} />
                     <FormGroup>
                         <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
-                            
                             <InputText label='Telephone' />   
                         </Box>
                     </FormGroup>
@@ -65,8 +71,7 @@ function Login() {
                       <Button startIcon={<LoginTwoToneIcon />}
                               variant='contained'
                               size='large'
-                              sx={{ backgroundColor: 'primary', fontSize: 14,
-                                    "&:hover":{backgroundColor: theme.palette.secondary}}}> 
+                              sx={LoginBtnStyles}> 
                           Connectez-vous 
                       </Button>                 
                     </FormGroup>
