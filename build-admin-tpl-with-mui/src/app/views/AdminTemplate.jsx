@@ -4,6 +4,10 @@ import { Box, Grid, Popover, styled, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { theme } from '../themes/theme';
+import '@fontsource/ubuntu/300.css';
+import '@fontsource/ubuntu/400.css';
+import '@fontsource/ubuntu/500.css';
+import '@fontsource/ubuntu/700.css';
 const logo = require('../assets/images/logo-blue.png');
 
 const MenuItem = styled('div')(()=>({
@@ -11,6 +15,7 @@ const MenuItem = styled('div')(()=>({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  fontFamily: theme.fontFamily.police.main,
   cursor: 'pointer'
 }));
 
@@ -31,6 +36,7 @@ const MenuItemStyles = {
     bgcolor: '#fff',
     '& > a > svg, > svg': {
       color: theme.palette.primary.main,
+      fontFamily: theme.fontFamily.police.main,
       fontSize: 64
     }
   },
@@ -42,15 +48,17 @@ const MenuItemStyles = {
 
 const MainStyles = {
   marginLeft: '100px',
-  overflowX: 'hidden'
+  overflowX: 'hidden',
 
 }
 
 const NavBarStyles = { 
   position: 'fixed',
   zIndex: '1000',
+  // boxShadow: '1px 0px 10px 4px #4B4B4B',
   bgcolor: '#fff',
   width: '100%',
+  fontFamily: theme.fontFamily,
   maxWidth: 'inherit !important',
   minHeight: '70px',
   display: 'flex',
@@ -69,6 +77,7 @@ const LayoutStyles = {
    bgcolor: '#F8F9FA',
    marginTop: '70px',
    padding: '60px 10px 0px 20px'
+
 }
 const AdminTemplate = WrappedComponent =>{
 
@@ -110,7 +119,7 @@ const AdminTemplate = WrappedComponent =>{
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/admin/historique'>
-                      <FormatListBulletedOutlined />
+                       <FormatListBulletedOutlined />
                     </Link>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
@@ -128,28 +137,9 @@ const AdminTemplate = WrappedComponent =>{
                     <NotificationsNoneOutlined sx={{color: '#adb5bd', fontSize: 32}}
                                                   onClick={openNotificationPopover}
                                                 />
-                    <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}} 
-                                              onClick={openUserPopover}
-                                            /> 
-                    <Popover
-                        open={Boolean(userPopover)}
-                        onClose={closeUserPopover}
-                        anchorEl={userPopover}
-                        anchorOrigin={{
-                          vertical: "bottom",
-                          horizontal: "left",
-                        }}
-                        transformOrigin={{
-                          vertical: 'top',
-                          horizontal: 'left',
-                        }}
-                       
-                      >
-                        <DropDownItem>
-                            Mon compte
-                        </DropDownItem>
-                    </Popover>    
-  
+                    <Link to='/admin/profil'>
+                        <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}}/> 
+                    </Link>  
                     <Popover
                         open={Boolean(notificationPopover)}
                         onClose={closeNotificationPopover}
