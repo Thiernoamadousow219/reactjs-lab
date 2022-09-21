@@ -114,6 +114,11 @@ const AdminTemplate = WrappedComponent =>{
                     </Link>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
+                    <Link to='/admin/historique'>
+                      <FormatListBulletedOutlined />
+                    </Link>
+                 </MenuItem>
+                 <MenuItem sx={MenuItemStyles}>
                    <LogoutOutlined />
                  </MenuItem>
               </Grid>
