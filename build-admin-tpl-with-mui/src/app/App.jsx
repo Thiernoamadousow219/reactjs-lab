@@ -6,6 +6,7 @@ import Home from './views/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './views/Login';
 import Historique from './views/Historique';
+import Profile from './views/Profile';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='admin'>
                 <Route index element={<Home />} />
                 <Route path='historique' element={<Historique />} />
+                <Route path='profil' element={<Profile/>}/>
             </Route>
         </Routes>    
       </BrowserRouter>

@@ -9,8 +9,12 @@ const currencies = [
     label: '+221',
   },
   {
-    value: 'CIV',
-    label: '+222',
+    value: 'CI',
+    label: '+225',
+  },
+  {
+    value: 'CA',
+    label: '+1',
   },
   {
     value: 'TG',
@@ -51,8 +55,16 @@ export function InputText({label, required}) {
                                 onChange={handleChange}
                                 variant="standard"
                                 >
+                                
                                 {currencies.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
+                                    <img
+                                      loading="lazy"
+                                      width="20"
+                                      src={`https://flagcdn.com/w20/${option.value.toLowerCase()}.png`}
+                                      srcSet={`https://flagcdn.com/w40/${option.value.toLowerCase()}.png 2x`}
+                                      alt=""
+                                    />
                                         {option.label}
                                     </MenuItem>
                                 ))}

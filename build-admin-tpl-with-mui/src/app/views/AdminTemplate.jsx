@@ -45,7 +45,8 @@ const ContentStyles = {
 }
 
 const NavBarStyles = { 
-  bgcolor: '#fff', 
+  bgcolor: '#fff',
+  boxShadow: '1px 10px 18px #e9ecef',
   minHeight: '70px',
   display: 'flex',
   alignItems: 'center',
@@ -113,28 +114,9 @@ const AdminTemplate = WrappedComponent =>{
                     <NotificationsNoneOutlined sx={{color: '#adb5bd', fontSize: 32}}
                                                   onClick={openNotificationPopover}
                                                 />
-                    <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}} 
-                                              onClick={openUserPopover}
-                                            /> 
-                    <Popover
-                        open={Boolean(userPopover)}
-                        onClose={closeUserPopover}
-                        anchorEl={userPopover}
-                        anchorOrigin={{
-                          vertical: "bottom",
-                          horizontal: "left",
-                        }}
-                        transformOrigin={{
-                          vertical: 'top',
-                          horizontal: 'left',
-                        }}
-                       
-                      >
-                        <DropDownItem>
-                            Mon compte
-                        </DropDownItem>
-                    </Popover>    
-  
+                    <Link to='/admin/profil'>
+                        <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}}/> 
+                    </Link>  
                     <Popover
                         open={Boolean(notificationPopover)}
                         onClose={closeNotificationPopover}
