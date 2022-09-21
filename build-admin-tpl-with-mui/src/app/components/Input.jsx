@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { TextField, styled, InputAdornment, MenuItem} from '@mui/material';
 import '../assets/css/app.css';
 import {  PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
@@ -94,6 +95,9 @@ export function InputPassword({label, required}) {
                   required/>
     );
 }
+=======
+import { TextField, styled } from '@mui/material';
+>>>>>>> 36716a2420fe5bbc64cc3c7a35bab7d9bbfc5861
 
 export function ButtonSave({label}) {
     return (

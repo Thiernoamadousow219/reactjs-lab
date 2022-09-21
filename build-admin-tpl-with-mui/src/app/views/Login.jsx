@@ -1,9 +1,9 @@
 import React from 'react';
-import '../assets/css/app.css';
-import { Box, Button, Grid, styled, Typography } from '@mui/material';
-import { FormGroup, InputPassword, InputText } from '../components/Input';
+import { Avatar, Box, Button, Grid, InputAdornment, MenuItem, styled, TextField, Typography } from '@mui/material';
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import { theme } from '../themes/theme';
+import { PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
+import { currencies } from '../data/currencyData';
 
 const logo = require('../assets/images/logo.png');
 
@@ -16,7 +16,7 @@ const LeftPanel = styled('div')(({theme})=>({
     color: 'white',
     minHeight: '100vh',
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
-  }));
+}));
 
 const RightPanel = styled('div')({
   display: 'flex',
@@ -26,7 +26,27 @@ const RightPanel = styled('div')({
   color: '#727082'
 });
 
+const LoginFormGroup = styled('div')({
+  marginBottom: '32px',
+  width: '80%'
+});
+
+
+const LoginBtnStyles = { 
+  backgroundColor: 'primary', 
+  fontSize: 14,
+  "&:hover":{
+    backgroundColor: theme.palette.secondary
+  }
+}
+
 function Login() {
+
+  const [currency, setCurrency] = React.useState('EUR');
+
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -51,25 +71,60 @@ function Login() {
                   md={6}
                   lg={6}>
                 <RightPanel>
-                    <img src={logo} alt="logo" style={{ height: 300 }} />
-                    <FormGroup>
-                        <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
-                            
-                            <InputText label='Telephone' />   
-                        </Box>
-                    </FormGroup>
-                    <FormGroup>
-                        <InputPassword label='Mot de passe' />
-                    </FormGroup>
-                    <FormGroup>
+                    <Avatar src={logo} alt="logo" sx={{height: 300, width: 'auto'}} />
+                    <LoginFormGroup>
+                       <TextField label="Votre numéro de telephone" 
+                            className="input" 
+                            variant="standard" 
+                            fullWidth={true} 
+                            InputProps={{
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  <PhoneAndroidOutlined />
+                                </InputAdornment>
+                              ),
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <TextField
+                                          select
+                                          value={currency}
+                                          onChange={handleChange}
+                                          variant="standard"
+                                          >
+                                          {currencies.map((option) => (
+                                              <MenuItem key={option.value} value={option.value}>
+                                                  {option.label}
+                                              </MenuItem>
+                                          ))}
+                                      </TextField>
+                                </InputAdornment>
+                              )
+                            }}
+                            required/>
+                    </LoginFormGroup>
+                    <LoginFormGroup>
+                        <TextField label='Mot de passe' 
+                            className="input" 
+                            variant="standard" 
+                            type="password"
+                            fullWidth={true}
+                            InputProps={{
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  <PasswordOutlined />
+                                </InputAdornment>
+                              )
+                            }}
+                            required/>
+                    </LoginFormGroup>
+                    <LoginFormGroup>
                       <Button startIcon={<LoginTwoToneIcon />}
                               variant='contained'
                               size='large'
-                              sx={{ backgroundColor: 'primary', fontSize: 14,
-                                    "&:hover":{backgroundColor: theme.palette.secondary}}}> 
+                              sx={LoginBtnStyles}> 
                           Connectez-vous 
                       </Button>                 
-                    </FormGroup>
+                    </LoginFormGroup>
                 </RightPanel>
             </Grid>
         </Grid>

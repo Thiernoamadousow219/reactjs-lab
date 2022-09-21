@@ -1,10 +1,10 @@
 import React from 'react'
 import AdminTemplate from './AdminTemplate'
 
-function Buy() {
+function Config() {
   return (
-    <div>Buy</div>
+    <div>Config</div>
   )
 }
 
-export default AdminTemplate(Buy);
+export default AdminTemplate(Config)
