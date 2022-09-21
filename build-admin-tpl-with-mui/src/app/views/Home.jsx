@@ -1,24 +1,13 @@
 import { AddOutlined } from '@mui/icons-material'
 import { Box, Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem,
-<<<<<<< HEAD
-            Select, Table, TableBody, TableCell, TableContainer, 
-            TableHead, TableRow, TextField, Typography } from '@mui/material'
-=======
             Select, TableCell, TableRow, TextField, Typography } from '@mui/material'
 
->>>>>>> 36716a2420fe5bbc64cc3c7a35bab7d9bbfc5861
 import React from 'react'
 import TableComponent from '../components/TableComponent'
 import AdminTemplate from './AdminTemplate'
-<<<<<<< HEAD
-import { theme } from '../themes/theme';
-// import FontFace {fontFamily: 'ubuntu'; src: local('ubuntu'),url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&family=Poppins:ital,wght@1,100;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');}
-const tableCardHeadersStyles = {
-=======
 import {data, titles} from '../data/tableData'
 
 const cardTitle = {
->>>>>>> 36716a2420fe5bbc64cc3c7a35bab7d9bbfc5861
     color: '#adb5bd',
     fontSize: '18px',
     fontFamily: theme.fontFamily.police.main,
@@ -34,14 +23,6 @@ const SoldCardHeaderStyled = {
     textTransform: 'uppercase', 
     marginBottom: '10px'
 }
-<<<<<<< HEAD
-
-const tHeadCellsStyles = {
-    fontSize: '14px',
-    fontWeight: 'bold',
-    fontFamily: theme.fontFamily.police.main,
-    color: '#fff'
-=======
 const SoldCardAmountStyled = {
     backgroundColor: '#fff', 
     color: 'black',
@@ -56,7 +37,6 @@ const SoldCardAmountStyled = {
 const SoldCardContentStyled = { 
     display: 'flex', 
     justifyContent: 'space-between' 
->>>>>>> 36716a2420fe5bbc64cc3c7a35bab7d9bbfc5861
 }
 const tRowsStyles = {
     '&:nth-of-type(even)':{
