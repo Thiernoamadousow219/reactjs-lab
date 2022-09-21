@@ -1,7 +1,7 @@
 import React from 'react'
-import { TextField, styled, Box, InputAdornment, MenuItem} from '@mui/material';
+import { TextField, styled, InputAdornment, MenuItem} from '@mui/material';
 import '../assets/css/app.css';
-import { LockClockOutlined, Password, PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
+import {  PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
 
 const currencies = [
   {

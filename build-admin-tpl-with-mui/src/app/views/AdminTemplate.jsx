@@ -19,11 +19,11 @@ const DropDownItem = styled('div')(()=>({
 }))
 
 const SideBarStyles = { 
+  position: 'fixed',
   bgcolor: theme.palette.primary.main, 
   minHeight: '100vh',
   display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between'
+  flexDirection: 'column'
 }
 
 const MenuItemStyles = {  
@@ -40,13 +40,18 @@ const MenuItemStyles = {
   }
 }
 
-const ContentStyles = {
-   bgcolor: '#F8F9FA' 
+const MainStyles = {
+  marginLeft: '100px',
+  overflowX: 'hidden'
+
 }
 
 const NavBarStyles = { 
+  position: 'fixed',
+  zIndex: '1000',
   bgcolor: '#fff',
-  boxShadow: '1px 10px 18px #e9ecef',
+  width: '100%',
+  maxWidth: 'inherit !important',
   minHeight: '70px',
   display: 'flex',
   alignItems: 'center',
@@ -61,7 +66,9 @@ const NavBarStyles = {
 }
 
 const LayoutStyles = { 
-    padding: '60px 10px 0px 20px'
+   bgcolor: '#F8F9FA',
+   marginTop: '70px',
+   padding: '60px 10px 0px 20px'
 }
 const AdminTemplate = WrappedComponent =>{
 
@@ -91,9 +98,11 @@ const AdminTemplate = WrappedComponent =>{
       <Box sx={{ flexGrow: 1 }}>
           <Grid container
                 direction='row'
-                bgcolor='#DADDE2'>
+                bgcolor='white'>
               <Grid item xs={1} sx={SideBarStyles}> 
-                 <img src={logo} alt='logo' height={100} />
+                 <Link to='/admin'>
+                  <img src={logo} alt='logo' height={90} style={{paddingBottom: '100px'}} />
+                 </Link>
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/admin'>
                       <ShoppingCartOutlined />
@@ -109,7 +118,7 @@ const AdminTemplate = WrappedComponent =>{
                  </MenuItem>
               </Grid>
   
-              <Grid item xs={11} sx={ContentStyles}> 
+              <Grid item xs={11} sx={MainStyles}> 
                  <Grid item xs={12} sx={NavBarStyles}>
                     <NotificationsNoneOutlined sx={{color: '#adb5bd', fontSize: 32}}
                                                   onClick={openNotificationPopover}
