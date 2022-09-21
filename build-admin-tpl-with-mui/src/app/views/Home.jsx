@@ -1,6 +1,6 @@
 import { AddOutlined } from '@mui/icons-material'
 import { Box, Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem,
-            Select, TextField, Typography } from '@mui/material'
+            Select, TableCell, TableRow, TextField, Typography } from '@mui/material'
 
 import React from 'react'
 import TableComponent from '../components/TableComponent'
@@ -33,10 +33,14 @@ const SoldCardAmountStyled = {
     alignItems: 'center', 
     fontWeight: '900'
 }
-
 const SoldCardContentStyled = { 
     display: 'flex', 
     justifyContent: 'space-between' 
+}
+const tRowsStyles = {
+    '&:nth-of-type(even)':{
+        bgcolor: '#f1f3f5'
+    }
 }
 
 
@@ -136,7 +140,18 @@ function Home() {
                         <Typography component='p' sx={cardTitle}>
                             Vos dernières opérations
                         </Typography> 
-                        <TableComponent data={data} titles={titles} />
+                        <TableComponent titles={titles}>
+                            {(data.length) ? data.map((item, key)=>( 
+                                <TableRow key={key} sx={tRowsStyles}>
+                                    <TableCell>{ (key + 1 )}</TableCell>
+                                    <TableCell>{ item.gerant }</TableCell>
+                                    <TableCell>{ item.type }</TableCell>
+                                    <TableCell>{ item.devise }</TableCell>
+                                    <TableCell>{ item.montant }</TableCell>
+                                </TableRow> 
+                            )): <TableRow></TableRow>}
+                        </TableComponent>
+
                     </CardContent>
                 </Card>
             </Grid>

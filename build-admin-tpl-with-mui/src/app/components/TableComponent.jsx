@@ -11,16 +11,11 @@ const tHeadCellsStyles = {
     color: '#fff'
 }
 
-const tRowsStyles = {
-    '&:nth-of-type(even)':{
-        bgcolor: '#f1f3f5'
-    }
-}
 
-function TableComponent({data, titles}) {
+function TableComponent({ titles, children}) {
  
     return (
-    ((data.length & titles.length) ? 
+    ((titles.length) ? 
         <TableContainer>
             <Table aria-label="simple table">
                 <TableHead sx={tHeadStyles}>
@@ -31,15 +26,7 @@ function TableComponent({data, titles}) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {(data.length) ? data.map((item, key)=>( 
-                        <TableRow key={key} sx={tRowsStyles}>
-                            <TableCell >{ (key + 1 )}</TableCell>
-                            <TableCell>{ item.gerant }</TableCell>
-                            <TableCell>{ item.type }</TableCell>
-                            <TableCell>{ item.devise }</TableCell>
-                            <TableCell>{ item.montant }</TableCell>
-                        </TableRow> 
-                    )): <TableRow></TableRow>}
+                    { children }
                 </TableBody>
             </Table>
         </TableContainer> : <Typography component='p'>Veillez founir les donnees du tableau</Typography>)
