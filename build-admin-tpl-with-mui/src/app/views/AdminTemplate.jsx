@@ -124,9 +124,7 @@ const AdminTemplate = WrappedComponent =>{
                     <NotificationsNoneOutlined sx={{color: '#adb5bd', fontSize: 32}}
                                                   onClick={openNotificationPopover}
                                                 />
-                    <Link to='/admin/profil'>
-                        <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}}/> 
-                    </Link>  
+                    <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}}/> 
                     <Popover
                         open={Boolean(notificationPopover)}
                         onClose={closeNotificationPopover}
