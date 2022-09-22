@@ -3,7 +3,9 @@ import { Avatar, Box, Button, Grid, InputAdornment, MenuItem, styled, TextField,
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import { theme } from '../themes/theme';
 import { PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
-import { currencies } from '../data/currencyData';
+import { countriesCode } from '../data/countriesCodeData';
+import { useNavigate } from 'react-router-dom';
+
 const logo = require('../assets/images/logo.png');
 
 const LeftPanel = styled('div')(({theme})=>({
@@ -42,11 +44,17 @@ const LoginBtnStyles = {
 
 function Login() {
 
-  const [currency, setCurrency] = React.useState('EUR');
+  const navigate = useNavigate();
+
+  const [countrieCode, setCountrieCode] = React.useState('EUR');
 
   const handleChange = (event) => {
-    setCurrency(event.target.value);
+    setCountrieCode(event.target.value);
   };
+
+  const login = ()=>{
+    navigate('/admin');
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -87,11 +95,11 @@ function Login() {
                                 <InputAdornment  position="start">
                                   <TextField
                                           select
-                                          value={currency}
+                                          value={countrieCode}
                                           onChange={handleChange}
                                           variant="standard"
                                           >
-                                          {currencies.map((option) => (
+                                          {countriesCode.map((option) => (
                                               <MenuItem key={option.value} value={option.value}>
                                               <img
                                                 loading="lazy"
@@ -129,7 +137,8 @@ function Login() {
                       <Button startIcon={<LoginTwoToneIcon />}
                               variant='contained'
                               size='large'
-                              sx={LoginBtnStyles}> 
+                              sx={LoginBtnStyles}
+                              onClick={login}> 
                           Connectez-vous 
                       </Button>                 
                     </LoginFormGroup>

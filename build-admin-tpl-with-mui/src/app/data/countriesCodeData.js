@@ -1,4 +1,4 @@
-export const currencies = [
+export const countriesCode = [
         {
             value: 'SN',
             label: '+221',

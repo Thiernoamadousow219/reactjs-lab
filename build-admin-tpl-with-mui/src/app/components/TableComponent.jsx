@@ -21,7 +21,7 @@ function TableComponent({ titles, children}) {
                 <TableHead sx={tHeadStyles}>
                     <TableRow>
                         {(titles.length) ? titles.map((item, key)=>(
-                            <TableCell key={key} sx={tHeadCellsStyles}>{item.name}</TableCell>
+                            <TableCell key={key} sx={tHeadCellsStyles}>{item}</TableCell>
                         )) : <TableCell sx={tHeadCellsStyles}>#</TableCell>}
                     </TableRow>
                 </TableHead>

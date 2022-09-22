@@ -154,77 +154,77 @@ function Historique() {
                             />
                           </Search>
                       </Grid>
-                        <TableContainer>
-                            <Table aria-label="simple table">
-                                <TableHead sx={tHeadStyles}>
-                                    <TableRow>
-                                        <TableCell sx={tHeadCellsStyles}>#</TableCell>
-                                        <TableCell sx={tHeadCellsStyles}>Gerant</TableCell>
-                                        <TableCell sx={tHeadCellsStyles}>Devise</TableCell>
-                                        <TableCell sx={tHeadCellsStyles}>Montant</TableCell>
-                                        <TableCell sx={tHeadCellsStyles}>Type</TableCell>
-                                        <TableCell sx={tHeadCellsStyles}>Solde</TableCell>
-                                        <TableCell sx={tHeadCellsStyles}>Actions</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    <TableRow sx={tRowsStyles}>
-                                        <TableCell sx={tableContent}>1</TableCell>
-                                        <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                        <TableCell sx={tableContent}>GNF</TableCell>
-                                        <TableCell sx={tableContent}>1 000 000 </TableCell>
-                                        <TableCell sx={achactDevise}>Achat</TableCell>
-                                        <TableCell sx={tableContent}>3 500 000</TableCell>
-                                        <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon}/>Annuler</Button></TableCell>
-                                    </TableRow>
-                                    <TableRow sx={tRowsStyles}>
-                                        <TableCell sx={tableContent}>2</TableCell>
-                                        <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                        <TableCell sx={tableContent}>CAD</TableCell>
-                                        <TableCell sx={tableContent}>6 650 </TableCell>
-                                        <TableCell sx={venteDevise}>Vente</TableCell>
-                                        <TableCell sx={tableContent}>22 500</TableCell>
-                                        <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                    </TableRow>
-                                    <TableRow sx={tRowsStyles}>
-                                        <TableCell sx={tableContent}>3</TableCell>
-                                        <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                        <TableCell sx={tableContent}>USD</TableCell>
-                                        <TableCell sx={tableContent}>2 500 </TableCell>
-                                        <TableCell sx={achactDevise}>Achat</TableCell>
-                                        <TableCell sx={tableContent}>10 000</TableCell>
-                                        <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                    </TableRow>
-                                    <TableRow sx={tRowsStyles}>
-                                        <TableCell sx={tableContent}>4</TableCell>
-                                        <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                        <TableCell sx={tableContent}>CFA</TableCell>
-                                        <TableCell sx={tableContent}>70 000 </TableCell>
-                                        <TableCell sx={venteDevise}>Vente</TableCell>
-                                        <TableCell sx={tableContent}> 2 500 000</TableCell>
-                                        <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                    </TableRow>
-                                    <TableRow sx={tRowsStyles}>
-                                        <TableCell sx={tableContent}>5</TableCell>
-                                        <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                        <TableCell sx={tableContent}>GNF</TableCell>
-                                        <TableCell sx={tableContent}>570 000 </TableCell>
-                                        <TableCell sx={achactDevise}>Achat</TableCell>
-                                        <TableCell sx={tableContent}> 2 500 000</TableCell>
-                                        <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                    </TableRow>
-                                    <TableRow sx={tRowsStyles}>
-                                        <TableCell sx={tableContent}>6</TableCell>
-                                        <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                        <TableCell sx={tableContent}>CFA</TableCell>
-                                        <TableCell sx={tableContent}>10 000 </TableCell>
-                                        <TableCell sx={venteDevise}>Vente</TableCell>
-                                        <TableCell sx={tableContent}> 2 500 000</TableCell>
-                                        <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                    </TableRow>
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
+                      <TableContainer>
+                          <Table aria-label="simple table">
+                              <TableHead sx={tHeadStyles}>
+                                  <TableRow>
+                                      <TableCell sx={tHeadCellsStyles}>#</TableCell>
+                                      <TableCell sx={tHeadCellsStyles}>Gerant</TableCell>
+                                      <TableCell sx={tHeadCellsStyles}>Devise</TableCell>
+                                      <TableCell sx={tHeadCellsStyles}>Montant</TableCell>
+                                      <TableCell sx={tHeadCellsStyles}>Type</TableCell>
+                                      <TableCell sx={tHeadCellsStyles}>Solde</TableCell>
+                                      <TableCell sx={tHeadCellsStyles}>Actions</TableCell>
+                                  </TableRow>
+                              </TableHead>
+                              <TableBody>
+                                  <TableRow sx={tRowsStyles}>
+                                      <TableCell sx={tableContent}>1</TableCell>
+                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
+                                      <TableCell sx={tableContent}>GNF</TableCell>
+                                      <TableCell sx={tableContent}>1 000 000 </TableCell>
+                                      <TableCell sx={achactDevise}>Achat</TableCell>
+                                      <TableCell sx={tableContent}>3 500 000</TableCell>
+                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon}/>Annuler</Button></TableCell>
+                                  </TableRow>
+                                  <TableRow sx={tRowsStyles}>
+                                      <TableCell sx={tableContent}>2</TableCell>
+                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
+                                      <TableCell sx={tableContent}>CAD</TableCell>
+                                      <TableCell sx={tableContent}>6 650 </TableCell>
+                                      <TableCell sx={venteDevise}>Vente</TableCell>
+                                      <TableCell sx={tableContent}>22 500</TableCell>
+                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
+                                  </TableRow>
+                                  <TableRow sx={tRowsStyles}>
+                                      <TableCell sx={tableContent}>3</TableCell>
+                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
+                                      <TableCell sx={tableContent}>USD</TableCell>
+                                      <TableCell sx={tableContent}>2 500 </TableCell>
+                                      <TableCell sx={achactDevise}>Achat</TableCell>
+                                      <TableCell sx={tableContent}>10 000</TableCell>
+                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
+                                  </TableRow>
+                                  <TableRow sx={tRowsStyles}>
+                                      <TableCell sx={tableContent}>4</TableCell>
+                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
+                                      <TableCell sx={tableContent}>CFA</TableCell>
+                                      <TableCell sx={tableContent}>70 000 </TableCell>
+                                      <TableCell sx={venteDevise}>Vente</TableCell>
+                                      <TableCell sx={tableContent}> 2 500 000</TableCell>
+                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
+                                  </TableRow>
+                                  <TableRow sx={tRowsStyles}>
+                                      <TableCell sx={tableContent}>5</TableCell>
+                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
+                                      <TableCell sx={tableContent}>GNF</TableCell>
+                                      <TableCell sx={tableContent}>570 000 </TableCell>
+                                      <TableCell sx={achactDevise}>Achat</TableCell>
+                                      <TableCell sx={tableContent}> 2 500 000</TableCell>
+                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
+                                  </TableRow>
+                                  <TableRow sx={tRowsStyles}>
+                                      <TableCell sx={tableContent}>6</TableCell>
+                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
+                                      <TableCell sx={tableContent}>CFA</TableCell>
+                                      <TableCell sx={tableContent}>10 000 </TableCell>
+                                      <TableCell sx={venteDevise}>Vente</TableCell>
+                                      <TableCell sx={tableContent}> 2 500 000</TableCell>
+                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
+                                  </TableRow>
+                              </TableBody>
+                          </Table>
+                      </TableContainer>
                     </CardContent>
                 </Card>
             </Grid>

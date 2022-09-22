@@ -16,10 +16,6 @@ const MenuItem = styled('div')(()=>({
   cursor: 'pointer'
 }));
 
-const DropDownItem = styled('div')(()=>({
-  borderTop: '1px solid #adb5bd',
-}))
-
 const SideBarStyles = { 
   position: 'fixed',
   bgcolor: theme.palette.primary.main, 
@@ -80,17 +76,8 @@ const AdminTemplate = WrappedComponent =>{
 
   function Admin() {
 
-    const [userPopover, setUserPopover] = useState(null);
     const [notificationPopover, setNotificationPopover] = useState(null);
-    
-    const openUserPopover = (event) => {
-      setUserPopover(event.currentTarget);
-    };
-  
-    const closeUserPopover = (event) => {
-      setUserPopover(null);
-    };
-  
+
   
     const openNotificationPopover = (event) => {
       setNotificationPopover(event.currentTarget);
@@ -136,9 +123,7 @@ const AdminTemplate = WrappedComponent =>{
                     <NotificationsNoneOutlined sx={{color: '#adb5bd', fontSize: 32}}
                                                   onClick={openNotificationPopover}
                                                 />
-                    <Link to='/admin/profil'>
-                        <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}}/> 
-                    </Link>  
+                    <AccountCircleOutlined sx={{color: '#adb5bd', fontSize: 32}}/> 
                     <Popover
                         open={Boolean(notificationPopover)}
                         onClose={closeNotificationPopover}
