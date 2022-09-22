@@ -60,7 +60,7 @@ function Login() {
                    <Typography variant='h2' component='h2' mb={8} sx={{fontFamily:'ubuntu'}}>
                       Bienvenu chez nous !
                    </Typography>
-                   <Typography component='p' p={2} sx={{lineHeight: 1.6 ,fontFamily:'ubuntu',letterSpacing:1.6}}>
+                   <Typography component='p' p={2} sx={{lineHeight: 1.6 ,fontFamily:'ubuntu',letterSpacing:1.6,fontSize:18}}>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, similique. Quae vero repudiandae iusto nesciunt tenetur asperiores, amet earum itaque quisquam harum! Recusandae consequatur in neque. Ratione maiores totam laborum.
                    </Typography>
                 </LeftPanel>

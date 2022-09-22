@@ -48,12 +48,16 @@ const tRowsStyles = {
 
 const operations = [
     {
-        label: 'Achat',
+        label: 'Selectionner une Operation',
         value: 1
     },
     {
-        label: 'Vente',
+        label: 'Achat',
         value: 2
+    },
+    {
+        label: 'Vente',
+        value: 3
     }
 ]
 

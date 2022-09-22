@@ -4,10 +4,7 @@ import { Box, Grid, Popover, styled, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { theme } from '../themes/theme';
-import '@fontsource/ubuntu/300.css';
-import '@fontsource/ubuntu/400.css';
-import '@fontsource/ubuntu/500.css';
-import '@fontsource/ubuntu/700.css';
+
 const logo = require('../assets/images/logo-blue.png');
 
 const MenuItem = styled('div')(()=>({
@@ -128,7 +125,9 @@ const AdminTemplate = WrappedComponent =>{
                     </Link>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
-                   <LogoutOutlined />
+                    <Link to='/'>
+                        <LogoutOutlined />
+                    </Link>
                  </MenuItem>
               </Grid>
   

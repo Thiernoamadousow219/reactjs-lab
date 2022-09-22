@@ -55,7 +55,6 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 const tableCardHeadersStyles = {
   color: '#555',
   fontSize: '42px',
-  // borderBottom: '1px solid #adb5bd',
   marginBottom: '32px',
   fontFamily:'ubuntu',
 }
@@ -84,7 +83,6 @@ const historyTitle = {
 }
 const achactDevise = {
   color:'#c92a2a',
-  // fontSize: '18px',
   textAlign:'center',
   fontFamily:'ubuntu',
 }
@@ -108,7 +106,6 @@ const button = {
   display: 'flex',
   justifyContent: 'space-between',
   position: 'relative',
-  // top: '10px',
   fontFamily:'ubuntu',
 }
 const buttonDanger = {
@@ -117,7 +114,6 @@ const buttonDanger = {
   display: 'flex',
   justifyContent:'center',
   position: 'relative',
-  // top: '20px',
   fontFamily:'ubuntu',
 }
 const btnIcon = {
@@ -154,6 +150,7 @@ function Historique() {
                             <StyledInputBase sx={placeholder}
                               placeholder="Rechercher"
                               inputProps={{ 'ubuntu': 'Rechercher' }}
+                              type="search"
                             />
                           </Search>
                       </Grid>
