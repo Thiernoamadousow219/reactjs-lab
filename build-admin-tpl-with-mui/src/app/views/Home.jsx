@@ -91,7 +91,16 @@ function Home() {
                 </Typography> 
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
-                        <SoldCard amount={2000} devise='GNF'/>                        
+                        <SoldCard amount='10 000 000' devise='GNF'/>                        
+                    </Grid>
+                    <Grid item xs={6}>
+                        <SoldCard amount='110 000' devise='CAD' style={{bgcolor: '#B39CD0'}}/>                        
+                    </Grid>
+                    <Grid item xs={6}>
+                        <SoldCard amount='200 000' devise='$' style={{bgcolor: '#008F7A'}}/>                        
+                    </Grid>
+                    <Grid item xs={6}>
+                        <SoldCard amount='15 000 000' devise='XOF' style={{bgcolor: '#2C73D2'}}/>                        
                     </Grid>
                 </Grid>
             </Grid>
