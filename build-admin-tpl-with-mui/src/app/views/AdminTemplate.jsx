@@ -19,10 +19,6 @@ const MenuItem = styled('div')(()=>({
   cursor: 'pointer'
 }));
 
-const DropDownItem = styled('div')(()=>({
-  borderTop: '1px solid #adb5bd',
-}))
-
 const SideBarStyles = { 
   position: 'fixed',
   bgcolor: theme.palette.primary.main, 
@@ -83,17 +79,8 @@ const AdminTemplate = WrappedComponent =>{
 
   function Admin() {
 
-    const [userPopover, setUserPopover] = useState(null);
     const [notificationPopover, setNotificationPopover] = useState(null);
-    
-    const openUserPopover = (event) => {
-      setUserPopover(event.currentTarget);
-    };
-  
-    const closeUserPopover = (event) => {
-      setUserPopover(null);
-    };
-  
+
   
     const openNotificationPopover = (event) => {
       setNotificationPopover(event.currentTarget);
