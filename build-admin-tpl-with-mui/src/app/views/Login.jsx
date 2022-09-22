@@ -4,6 +4,7 @@ import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import { theme } from '../themes/theme';
 import { PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
 import { countriesCode } from '../data/countriesCodeData';
+import { useNavigate } from 'react-router-dom';
 
 const logo = require('../assets/images/logo.png');
 
@@ -42,11 +43,17 @@ const LoginBtnStyles = {
 
 function Login() {
 
+  const navigate = useNavigate();
+
   const [countrieCode, setCountrieCode] = React.useState('EUR');
 
   const handleChange = (event) => {
     setCountrieCode(event.target.value);
   };
+
+  const login = ()=>{
+    navigate('/admin');
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -121,7 +128,8 @@ function Login() {
                       <Button startIcon={<LoginTwoToneIcon />}
                               variant='contained'
                               size='large'
-                              sx={LoginBtnStyles}> 
+                              sx={LoginBtnStyles}
+                              onClick={login}> 
                           Connectez-vous 
                       </Button>                 
                     </LoginFormGroup>
