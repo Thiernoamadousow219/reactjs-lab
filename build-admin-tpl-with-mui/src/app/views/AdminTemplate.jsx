@@ -97,7 +97,7 @@ const AdminTemplate = WrappedComponent =>{
                 bgcolor='white'>
               <Grid item xs={1} sx={SideBarStyles}> 
                  <Link to='/admin'>
-                  <img src={logo} alt='logo' height={90} style={{paddingBottom: '100px'}} />
+                  <img src={logo} alt='logo' height="90px" width="90px" style={{paddingBottom: '100px'}} />
                  </Link>
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/admin'>
