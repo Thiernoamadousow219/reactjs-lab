@@ -100,7 +100,13 @@ function Login() {
                                           >
                                           {countriesCode.map((option) => (
                                               <MenuItem key={option.value} value={option.value}>
-                                                  {option.label}
+                                                  <img
+                                                      loading="lazy"
+                                                      width="20"
+                                                      src={`https://flagcdn.com/w20/${option.value.toLowerCase()}.png`}
+                                                      srcSet={`https://flagcdn.com/w40/${option.value.toLowerCase()}.png 2x`}
+                                                      alt=""
+                                                    />
                                               </MenuItem>
                                           ))}
                                       </TextField>
