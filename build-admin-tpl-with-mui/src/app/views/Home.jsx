@@ -144,7 +144,7 @@ function Home() {
                         <Typography component='p' sx={cardTitle}>
                             Vos dernières opérations
                         </Typography> 
-                        <TableComponent titles={titles}>
+                        <TableComponent columns={titles}>
                             {(data.length) ? data.map((item, key)=>( 
                                 <TableRow key={key} sx={tRowsStyles}>
                                     <TableCell>{ (key + 1 )}</TableCell>
