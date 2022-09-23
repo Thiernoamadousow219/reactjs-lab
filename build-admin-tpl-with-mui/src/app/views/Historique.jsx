@@ -5,6 +5,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import AdminTemplate from './AdminTemplate';
 import LocalPrintshopOutlinedIcon from '@mui/icons-material/LocalPrintshopOutlined';
+import { theme } from '../themes/theme';
+
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: '#fff',
@@ -55,13 +57,13 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 const tableCardHeadersStyles = {
   color: '#555',
   fontSize: '42px',
+  fontFamily : theme.fontFamily.police.main,
   marginBottom: '32px',
-  fontFamily:'ubuntu',
 }
 
 const tHeadStyles = {
   bgcolor: '#2A4173',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 }
 
 const tHeadCellsStyles = {
@@ -69,7 +71,7 @@ const tHeadCellsStyles = {
   fontWeight: 'bold',
   color: '#fff',
   textAlign:'center',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 }
 
 const tRowsStyles = {
@@ -84,13 +86,12 @@ const historyTitle = {
 const achactDevise = {
   color:'#c92a2a',
   textAlign:'center',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 }
 const venteDevise = {
   color:'#37b24d',
   textAlign:'center',
-  // fontSize:'18px',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 }
 const rechercheCard = {
   display: 'flex',
@@ -106,7 +107,7 @@ const button = {
   display: 'flex',
   justifyContent: 'space-between',
   position: 'relative',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 }
 const buttonDanger = {
   backgroundColor:"#C80A0A",
@@ -114,7 +115,7 @@ const buttonDanger = {
   display: 'flex',
   justifyContent:'center',
   position: 'relative',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 }
 const btnIcon = {
   display:'flex',
@@ -125,11 +126,11 @@ const actions = {
   display:'flex',
   justifyContent:'space-evenly',
   alignItems:'center',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 }
 const tableContent = {
   textAlign:'center',
-  fontFamily:'ubuntu',
+  fontFamily: theme.fontFamily.police.main,
 } 
 function Historique() {
   return (

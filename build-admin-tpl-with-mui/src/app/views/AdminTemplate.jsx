@@ -48,10 +48,9 @@ const MainStyles = {
 const NavBarStyles = { 
   position: 'fixed',
   zIndex: '1000',
-  // boxShadow: '1px 0px 10px 4px #4B4B4B',
   bgcolor: '#fff',
   width: '100%',
-  fontFamily: theme.fontFamily,
+  fontFamily: theme.fontFamily.police.main,
   maxWidth: 'inherit !important',
   minHeight: '70px',
   display: 'flex',

@@ -6,6 +6,7 @@ import { PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
 import { countriesCode } from '../data/countriesCodeData';
 import { useNavigate } from 'react-router-dom';
 
+
 const logo = require('../assets/images/logo.png');
 
 const LeftPanel = styled('div')(({theme})=>({
@@ -35,8 +36,8 @@ const LoginFormGroup = styled('div')({
 
 const LoginBtnStyles = { 
   backgroundColor: 'primary', 
+  fontFamily: theme.fontFamily.police.main,
   fontSize: 14,
-  fontFamily:'ubuntu',
   "&:hover":{
     backgroundColor: theme.palette.secondary
   }
@@ -55,6 +56,15 @@ function Login() {
   const login = ()=>{
     navigate('/admin');
   }
+  const policeText = {
+    fontFamily: theme.fontFamily.police.main,
+  }
+  const itemText = {
+    fontFamily: theme.fontFamily.police.main,
+    lineHeight: '1.8em',
+    letterSpacing:'1.6px',
+    fontSize:'18px'
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -65,10 +75,10 @@ function Login() {
                   xs={6}
                   sx={{display: {xs: 'none', sm: 'none', md: 'block', lg: 'block'}}}>
                 <LeftPanel>
-                   <Typography variant='h2' component='h2' mb={8} sx={{fontFamily:'ubuntu'}}>
+                   <Typography variant='h2' component='h2' mb={8} sx={policeText}>
                       Bienvenu chez nous !
                    </Typography>
-                   <Typography component='p' p={2} sx={{lineHeight: 1.6 ,fontFamily:'ubuntu',letterSpacing:1.6,fontSize:18}}>
+                   <Typography component='p' p={2} sx={itemText}>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, similique. Quae vero repudiandae iusto nesciunt tenetur asperiores, amet earum itaque quisquam harum! Recusandae consequatur in neque. Ratione maiores totam laborum.
                    </Typography>
                 </LeftPanel>
@@ -122,7 +132,7 @@ function Login() {
                             className="input" 
                             variant="standard" 
                             type="password"
-                            sx={{fontFamily:'ubuntu'}}
+                            sx={policeText}
                             fullWidth={true}
                             InputProps={{
                               endAdornment: (

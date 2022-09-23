@@ -17,14 +17,14 @@ const cardTitle = {
 }
 
 const FormControlStyled = { marginBottom: '12px'}
-const SoldCardStyled = { bgcolor: '#5F70A7', minHeight: '120px', color: '#fff'}
-const SoldCardHeaderStyled = {
+const SoldCardStyled    = { bgcolor: '#5F70A7', minHeight: '120px', color: '#fff'}
+const SoldCardHeaderStyled  = {
     fontSize: '18px', 
     fontWeight: '800',
     textTransform: 'uppercase', 
     marginBottom: '10px'
 }
-const SoldCardAmountStyled = {
+const SoldCardAmountStyled  = {
     backgroundColor: '#fff', 
     color: 'black',
     borderRadius: '50px', 
@@ -82,7 +82,6 @@ const SoldCard = ({amount, devise, style})=>{
 
 function Home() {
     const [operation, setOperation] = React.useState(operations[0].label);
-
     const handleChange = (event) => {
       setOperation(event.target.value);
     };

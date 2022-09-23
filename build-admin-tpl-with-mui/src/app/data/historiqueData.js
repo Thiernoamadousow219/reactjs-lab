@@ -1,4 +1,4 @@
-export const devises = [
+export const historiques = [
     {
         value: '0',
         code: 'GNF',
