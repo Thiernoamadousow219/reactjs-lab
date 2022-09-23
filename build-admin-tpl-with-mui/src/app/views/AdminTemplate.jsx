@@ -4,10 +4,7 @@ import { Box, Grid, Popover, styled, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { theme } from '../themes/theme';
-import '@fontsource/ubuntu/300.css';
-import '@fontsource/ubuntu/400.css';
-import '@fontsource/ubuntu/500.css';
-import '@fontsource/ubuntu/700.css';
+
 const logo = require('../assets/images/logo-blue.png');
 
 const MenuItem = styled('div')(()=>({
@@ -51,10 +48,9 @@ const MainStyles = {
 const NavBarStyles = { 
   position: 'fixed',
   zIndex: '1000',
-  // boxShadow: '1px 0px 10px 4px #4B4B4B',
   bgcolor: '#fff',
   width: '100%',
-  fontFamily: theme.fontFamily,
+  fontFamily: theme.fontFamily.police.main,
   maxWidth: 'inherit !important',
   minHeight: '70px',
   display: 'flex',
@@ -115,7 +111,9 @@ const AdminTemplate = WrappedComponent =>{
                     </Link>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
-                   <LogoutOutlined />
+                    <Link to='/'>
+                        <LogoutOutlined />
+                    </Link>
                  </MenuItem>
               </Grid>
   
