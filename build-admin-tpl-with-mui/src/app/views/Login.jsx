@@ -6,6 +6,7 @@ import { PasswordOutlined, PhoneAndroidOutlined } from '@mui/icons-material';
 import { countriesCode } from '../data/countriesCodeData';
 import { useNavigate } from 'react-router-dom';
 
+
 const logo = require('../assets/images/logo.png');
 
 const LeftPanel = styled('div')(({theme})=>({
@@ -29,12 +30,13 @@ const RightPanel = styled('div')({
 
 const LoginFormGroup = styled('div')({
   marginBottom: '32px',
-  width: '80%'
+  width: '80%',
 });
 
 
 const LoginBtnStyles = { 
   backgroundColor: 'primary', 
+  fontFamily: theme.fontFamily.police.main,
   fontSize: 14,
   "&:hover":{
     backgroundColor: theme.palette.secondary
@@ -54,6 +56,15 @@ function Login() {
   const login = ()=>{
     navigate('/admin');
   }
+  const policeText = {
+    fontFamily: theme.fontFamily.police.main,
+  }
+  const itemText = {
+    fontFamily: theme.fontFamily.police.main,
+    lineHeight: '1.8em',
+    letterSpacing:'1.6px',
+    fontSize:'18px'
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -64,10 +75,10 @@ function Login() {
                   xs={6}
                   sx={{display: {xs: 'none', sm: 'none', md: 'block', lg: 'block'}}}>
                 <LeftPanel>
-                   <Typography variant='h2' component='h2' mb={8}>
+                   <Typography variant='h2' component='h2' mb={8} sx={policeText}>
                       Bienvenu chez nous !
                    </Typography>
-                   <Typography component='p' p={2} sx={{lineHeight: 1.6}}>
+                   <Typography component='p' p={2} sx={itemText}>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, similique. Quae vero repudiandae iusto nesciunt tenetur asperiores, amet earum itaque quisquam harum! Recusandae consequatur in neque. Ratione maiores totam laborum.
                    </Typography>
                 </LeftPanel>
@@ -80,10 +91,10 @@ function Login() {
                 <RightPanel>
                     <Avatar src={logo} alt="logo" sx={{height: 300, width: 'auto'}} />
                     <LoginFormGroup>
-                       <TextField label="Votre numéro de telephone" 
+                       <TextField label="Votre numéro de téléphone" 
                             className="input" 
                             variant="standard" 
-                            fullWidth={true} 
+                            fullWidth={true}
                             InputProps={{
                               endAdornment: (
                                 <InputAdornment position="end">
@@ -91,7 +102,7 @@ function Login() {
                                 </InputAdornment>
                               ),
                               startAdornment: (
-                                <InputAdornment position="start">
+                                <InputAdornment  position="start">
                                   <TextField
                                           select
                                           value={countrieCode}
@@ -120,6 +131,7 @@ function Login() {
                             className="input" 
                             variant="standard" 
                             type="password"
+                            sx={policeText}
                             fullWidth={true}
                             InputProps={{
                               endAdornment: (
