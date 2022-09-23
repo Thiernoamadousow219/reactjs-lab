@@ -7,8 +7,8 @@ import AdminTemplate from './AdminTemplate';
 import LocalPrintshopOutlinedIcon from '@mui/icons-material/LocalPrintshopOutlined';
 import { theme } from '../themes/theme';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
-import { historiques, historiqueColumns } from '../data/historiqueData';
 import TableComponent from '../components/TableComponent';
+import { historiques, historiqueColumns } from '../data/historiqueData';
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: '#fff',
