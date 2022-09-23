@@ -1,6 +1,6 @@
 export const data = [
         {
-            "gerant": "SOW Amadou",
+            "gerant": " Thierno SOW Amadou",
             "type": "Achat",
             "devise": "GNF",
             "montant": 100000

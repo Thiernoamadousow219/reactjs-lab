@@ -17,14 +17,14 @@ const cardTitle = {
 }
 
 const FormControlStyled = { marginBottom: '12px'}
-const SoldCardStyled = { bgcolor: '#5F70A7', minHeight: '120px', color: '#fff'}
-const SoldCardHeaderStyled = {
+const SoldCardStyled    = { bgcolor: '#5F70A7', minHeight: '120px', color: '#fff'}
+const SoldCardHeaderStyled  = {
     fontSize: '18px', 
     fontWeight: '800',
     textTransform: 'uppercase', 
     marginBottom: '10px'
 }
-const SoldCardAmountStyled = {
+const SoldCardAmountStyled  = {
     backgroundColor: '#fff', 
     color: 'black',
     borderRadius: '50px', 
@@ -48,12 +48,16 @@ const tRowsStyles = {
 
 const operations = [
     {
-        label: 'Achat',
+        label: 'Selectionner une Operation',
         value: 1
     },
     {
-        label: 'Vente',
+        label: 'Achat',
         value: 2
+    },
+    {
+        label: 'Vente',
+        value: 3
     }
 ]
 
@@ -78,7 +82,6 @@ const SoldCard = ({amount, devise, style})=>{
 
 function Home() {
     const [operation, setOperation] = React.useState(operations[0].label);
-
     const handleChange = (event) => {
       setOperation(event.target.value);
     };
@@ -141,7 +144,7 @@ function Home() {
                         <Typography component='p' sx={cardTitle}>
                             Vos dernières opérations
                         </Typography> 
-                        <TableComponent titles={titles}>
+                        <TableComponent columns={titles}>
                             {(data.length) ? data.map((item, key)=>( 
                                 <TableRow key={key} sx={tRowsStyles}>
                                     <TableCell>{ (key + 1 )}</TableCell>
