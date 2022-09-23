@@ -3,7 +3,7 @@ import React from 'react'
 import AdminTemplate from './AdminTemplate'
 import { theme } from '../themes/theme'
 import { rates, rateColumns } from '../data/ratesData'
-import TableComponent from '../components/TableComponent'
+import TableComponent, {tRowStyles, tableCell} from '../components/TableComponent'
 import { currencies, currenciesColumns } from '../data/currenciesData'
 import { AddOutlined } from '@mui/icons-material'
 
@@ -13,12 +13,6 @@ const cardTitle = {
     fontFamily: theme.fontFamily.police.main,
     borderBottom: '1px solid #adb5bd',
     marginBottom: '32px',
-}
-
-const tRowsStyles = {
-    '&:nth-of-type(even)':{
-        bgcolor: '#f1f3f5'
-    }
 }
 
 function Config() {
@@ -41,16 +35,16 @@ function Config() {
                         <Typography component='p' sx={cardTitle}>
                             Les taux de change du jours
                         </Typography> 
-                        <TableComponent titles={rateColumns}>
+                        <TableComponent columns={rateColumns}>
                             {(rates.length) ? rates.map((item, key)=>( 
-                                <TableRow key={key} sx={tRowsStyles}>
-                                    <TableCell>{ (key + 1 )}</TableCell>
-                                    <TableCell>{ item.C_Currency_ID }</TableCell>
-                                    <TableCell>{ item.C_Currency_ID_To }</TableCell>
-                                    <TableCell>{ item.ValidFrom }</TableCell>
-                                    <TableCell>{ item.ValidTo }</TableCell>
-                                    <TableCell>{ item.MultiplyRate }</TableCell>
-                                    <TableCell>{ item.marge }</TableCell>
+                                <TableRow key={key} sx={tRowStyles}>
+                                    <TableCell sx={tableCell}>{ (key + 1 )}</TableCell>
+                                    <TableCell sx={tableCell}>{ item.C_Currency_ID }</TableCell>
+                                    <TableCell sx={tableCell}>{ item.C_Currency_ID_To }</TableCell>
+                                    <TableCell sx={tableCell}>{ item.ValidFrom }</TableCell>
+                                    <TableCell sx={tableCell}>{ item.ValidTo }</TableCell>
+                                    <TableCell sx={tableCell}>{ item.MultiplyRate }</TableCell>
+                                    <TableCell sx={tableCell}>{ item.marge }</TableCell>
                                 </TableRow> 
                             )): <TableRow></TableRow>}
                         </TableComponent>                                                
@@ -64,11 +58,11 @@ function Config() {
                             Vos devises de vente et d'achat
                         </Typography> 
                         
-                        <TableComponent titles={currenciesColumns}>
+                        <TableComponent columns={currenciesColumns}>
                             {(currencies.length) ? currencies.map((item, key)=>( 
-                                <TableRow key={key} sx={tRowsStyles}>
-                                    <TableCell>{ (key + 1 )}</TableCell>
-                                    <TableCell>{ item.ISO_Code }</TableCell>
+                                <TableRow key={key} sx={tRowStyles}>
+                                    <TableCell sx={tableCell}>{ (key + 1 )}</TableCell>
+                                    <TableCell sx={tableCell}>{ item.ISO_Code }</TableCell>
                                 </TableRow> 
                             )): <TableRow></TableRow>}
                         </TableComponent>                                                

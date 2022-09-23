@@ -6,6 +6,17 @@ const tHeadStyles = {
     bgcolor: '#2A4173'
 }
 
+export const tRowStyles = {
+    '&:nth-of-type(even)':{
+        bgcolor: '#f1f3f5'
+    }
+}
+
+export const tableCell = {
+    textAlign:'center',
+    fontFamily: theme.fontFamily.police.main,
+  } 
+
 const tHeadCellsStyles = {
     textAlign:'center',
     fontFamily: theme.fontFamily.police.main,
