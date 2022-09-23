@@ -3,7 +3,7 @@ import { Box, Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem
             Select, TableCell, TableRow, TextField, Typography } from '@mui/material'
 
 import React from 'react'
-import TableComponent from '../components/TableComponent'
+import TableComponent, {tRowStyles, tCellStyles} from '../components/TableComponent'
 import AdminTemplate from './AdminTemplate'
 import {data, titles} from '../data/tableData'
 import { theme } from '../themes/theme'
@@ -156,11 +156,11 @@ function Home() {
                         <TableComponent columns={titles}>
                             {(data.length) ? data.map((item, key)=>( 
                                 <TableRow key={key} sx={tRowsStyles}>
-                                    <TableCell>{ (key + 1 )}</TableCell>
-                                    <TableCell>{ item.gerant }</TableCell>
-                                    <TableCell>{ item.type }</TableCell>
-                                    <TableCell>{ item.devise }</TableCell>
-                                    <TableCell>{ item.montant }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ (key + 1 )}</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.gerant }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.type }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.devise }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.montant }</TableCell>
                                 </TableRow> 
                             )): <TableRow></TableRow>}
                         </TableComponent>

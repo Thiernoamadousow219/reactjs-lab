@@ -12,7 +12,7 @@ export const tRowStyles = {
     }
 }
 
-export const tableCell = {
+export const tCellStyles = {
     textAlign:'center',
     fontFamily: theme.fontFamily.police.main,
   } 
