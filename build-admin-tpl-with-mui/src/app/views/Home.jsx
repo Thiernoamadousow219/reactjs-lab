@@ -3,7 +3,7 @@ import { Box, Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem
             Select, TableCell, TableRow, TextField, Typography } from '@mui/material'
 
 import React from 'react'
-import TableComponent, {tRowStyles, tCellStyles} from '../components/TableComponent'
+import TableComponent, {tCellStyles} from '../components/TableComponent'
 import AdminTemplate from './AdminTemplate'
 import {data, titles} from '../data/tableData'
 import { theme } from '../themes/theme'

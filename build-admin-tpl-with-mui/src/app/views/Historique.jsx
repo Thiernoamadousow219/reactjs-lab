@@ -1,6 +1,6 @@
-import { Box, Button, Card, CardContent, Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent, Grid, TableCell, TableRow, Typography } from '@mui/material';
 import React from 'react'
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import AdminTemplate from './AdminTemplate';
@@ -31,9 +31,7 @@ const Search = styled('div')(({ theme }) => ({
   backgroundColor: '#f5f6f4',
   '&:hover': {
     backgroundColor: '#f5f6f4',
-  },
-  marginLeft: 0,
-  width: '100%'
+  }
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -53,27 +51,11 @@ const tableCardHeadersStyles = {
   marginBottom: '32px',
 }
 
-const tHeadStyles = {
-  bgcolor: '#2A4173',
-  fontFamily: theme.fontFamily.police.main,
-}
-
-const tHeadCellsStyles = {
-  fontSize: '22px',
-  fontWeight: 'bold',
-  color: '#fff',
-  textAlign:'center',
-  fontFamily: theme.fontFamily.police.main,
-}
 
 const tRowsStyles = {
   '&:nth-child(even)':{
       bgcolor: '#f1f3f5'
   }
-}
-const historyTitle = {
-  fontSize:'48px',
-  color:'#adb5bd',
 }
 const achatDevise = {
   color:'#c92a2a',
