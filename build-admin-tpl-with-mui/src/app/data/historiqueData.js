@@ -1,18 +1,32 @@
 export const historiques = [
     {
-        value: '0',
-        code: 'GNF',
+        client: 'Thierno Amadou Sow',
+        devise: 'GNF',
+        montant: '500 000',
+        type: 'Achat',
+        solde: '1 500 000'
     },
     {
-        value: '1',
-        code: 'CFA',
+        client: 'Thierno Amadou Sow',
+        devise: 'GNF',
+        montant: '500 000',
+        type: 'Vente',
+        solde: '1 500 000'
     },
     {
-        value: '2',
-        code: 'CAD',
+        client: 'Thierno Amadou Sow',
+        devise: 'GNF',
+        montant: '500 000',
+        type: 'Achat',
+        solde: '1 500 000'
     },
     {
-        value: '3',
-        code: 'USD',
+        client: 'Thierno Amadou Sow',
+        devise: 'GNF',
+        montant: '500 000',
+        type: 'Vente',
+        solde: '1 500 000'
     }
 ];
+
+export const historiqueColumns = ["#","Gerant", "Devise", "Montant", "Type", "Solde", "Actions"];

@@ -6,21 +6,17 @@ import InputBase from '@mui/material/InputBase';
 import AdminTemplate from './AdminTemplate';
 import LocalPrintshopOutlinedIcon from '@mui/icons-material/LocalPrintshopOutlined';
 import { theme } from '../themes/theme';
-
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import { historiques, historiqueColumns } from '../data/historiqueData';
+import TableComponent from '../components/TableComponent';
+
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: '#fff',
   '& .MuiInputBase-input': {
     padding: '10px 10px',
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm','xs')]: {
-      width: '100%',
-      '&:focus': {
-        width: '100%',
-      },
-    },
+    width: '100%'
   },
 }));
 
@@ -37,11 +33,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: '#f5f6f4',
   },
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm','md')]: {
-    marginLeft: theme.spacing(1),
-    width: '18%',
-  },
+  width: '100%'
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -83,7 +75,7 @@ const historyTitle = {
   fontSize:'48px',
   color:'#adb5bd',
 }
-const achactDevise = {
+const achatDevise = {
   color:'#c92a2a',
   textAlign:'center',
   fontFamily: theme.fontFamily.police.main,
@@ -93,13 +85,16 @@ const venteDevise = {
   textAlign:'center',
   fontFamily: theme.fontFamily.police.main,
 }
-const rechercheCard = {
+const historiqueHeader = {
   display: 'flex',
   justifyContent: 'space-between',
   marginBottom: '12px',
   paddingLeft:'20px',
 }
-const placeholder = {
+const searchContainer = {
+  width: '350px !important'
+}
+const searchInput = {
   color:'#333',
 }
 
@@ -139,93 +134,43 @@ function Historique() {
             <Grid item xs={6} md={12} lg={12} sm={12}>
                 <Card>
                     <CardContent>
-                      <Grid container spacing={2} sx={rechercheCard}>
-                        <Typography component='p'
-                                  sx={tableCardHeadersStyles}>
+                      <Typography component='div' spacing={2} sx={historiqueHeader}>
+                          <Typography component='p' sx={tableCardHeadersStyles}>
                               Historique des Transactions
                           </Typography> 
-                          <Search>
+                          <Search sx={searchContainer}>
                             <SearchIconWrapper>
                               <SearchIcon />
                             </SearchIconWrapper>
-                            <StyledInputBase sx={placeholder}
+                            <StyledInputBase sx={searchInput}
                               placeholder="Rechercher"
                               inputProps={{ 'ubuntu': 'Rechercher' }}
                               type="search"
                             />
                           </Search>
-                      </Grid>
-                      <TableContainer>
-                          <Table aria-label="simple table">
-                              <TableHead sx={tHeadStyles}>
-                                  <TableRow>
-                                      <TableCell sx={tHeadCellsStyles}>#</TableCell>
-                                      <TableCell sx={tHeadCellsStyles}>Gerant</TableCell>
-                                      <TableCell sx={tHeadCellsStyles}>Devise</TableCell>
-                                      <TableCell sx={tHeadCellsStyles}>Montant</TableCell>
-                                      <TableCell sx={tHeadCellsStyles}>Type</TableCell>
-                                      <TableCell sx={tHeadCellsStyles}>Solde</TableCell>
-                                      <TableCell sx={tHeadCellsStyles}>Actions</TableCell>
-                                  </TableRow>
-                              </TableHead>
-                              <TableBody>
-                                  <TableRow sx={tRowsStyles}>
-                                      <TableCell sx={tableContent}>1</TableCell>
-                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                      <TableCell sx={tableContent}>GNF</TableCell>
-                                      <TableCell sx={tableContent}>1 000 000 </TableCell>
-                                      <TableCell sx={achactDevise}>Achat</TableCell>
-                                      <TableCell sx={tableContent}>3 500 000</TableCell>
-                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon}/>Annuler</Button></TableCell>
-                                  </TableRow>
-                                  <TableRow sx={tRowsStyles}>
-                                      <TableCell sx={tableContent}>2</TableCell>
-                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                      <TableCell sx={tableContent}>CAD</TableCell>
-                                      <TableCell sx={tableContent}>6 650 </TableCell>
-                                      <TableCell sx={venteDevise}>Vente</TableCell>
-                                      <TableCell sx={tableContent}>22 500</TableCell>
-                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                  </TableRow>
-                                  <TableRow sx={tRowsStyles}>
-                                      <TableCell sx={tableContent}>3</TableCell>
-                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                      <TableCell sx={tableContent}>USD</TableCell>
-                                      <TableCell sx={tableContent}>2 500 </TableCell>
-                                      <TableCell sx={achactDevise}>Achat</TableCell>
-                                      <TableCell sx={tableContent}>10 000</TableCell>
-                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                  </TableRow>
-                                  <TableRow sx={tRowsStyles}>
-                                      <TableCell sx={tableContent}>4</TableCell>
-                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                      <TableCell sx={tableContent}>CFA</TableCell>
-                                      <TableCell sx={tableContent}>70 000 </TableCell>
-                                      <TableCell sx={venteDevise}>Vente</TableCell>
-                                      <TableCell sx={tableContent}> 2 500 000</TableCell>
-                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                  </TableRow>
-                                  <TableRow sx={tRowsStyles}>
-                                      <TableCell sx={tableContent}>5</TableCell>
-                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                      <TableCell sx={tableContent}>GNF</TableCell>
-                                      <TableCell sx={tableContent}>570 000 </TableCell>
-                                      <TableCell sx={achactDevise}>Achat</TableCell>
-                                      <TableCell sx={tableContent}> 2 500 000</TableCell>
-                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                  </TableRow>
-                                  <TableRow sx={tRowsStyles}>
-                                      <TableCell sx={tableContent}>6</TableCell>
-                                      <TableCell sx={tableContent}>Thierno Amadou Sow</TableCell>
-                                      <TableCell sx={tableContent}>CFA</TableCell>
-                                      <TableCell sx={tableContent}>10 000 </TableCell>
-                                      <TableCell sx={venteDevise}>Vente</TableCell>
-                                      <TableCell sx={tableContent}> 2 500 000</TableCell>
-                                      <TableCell sx={actions}><Button sx={button} variant="contained"><LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> <Button sx={buttonDanger} variant="contained"><CancelOutlinedIcon sx={btnIcon} />Annuler</Button></TableCell>
-                                  </TableRow>
-                              </TableBody>
-                          </Table>
-                      </TableContainer>
+                      </Typography>
+                     
+                      <TableComponent columns={historiqueColumns} >
+                          {(historiques.length) ? historiques.map((historique, key)=>(
+                              <TableRow sx={tRowsStyles}>
+                                  <TableCell sx={tableContent}>{ key + 1}</TableCell>
+                                  <TableCell sx={tableContent}>{historique.client}</TableCell>
+                                  <TableCell sx={tableContent}>{historique.devise}</TableCell>
+                                  <TableCell sx={tableContent}>{historique.montant}</TableCell>
+                                  <TableCell sx={(historique.type === 'Achat') ? achatDevise: venteDevise}>
+                                    {historique.type}
+                                  </TableCell>
+                                  <TableCell sx={tableContent}>{historique.solde}</TableCell>
+                                  <TableCell sx={actions}>
+                                    <Button sx={button} variant="contained">
+                                      <LocalPrintshopOutlinedIcon sx={btnIcon}/>Imprimer</Button> 
+                                    <Button sx={buttonDanger} variant="contained">
+                                      <CancelOutlinedIcon sx={btnIcon}/>Annuler
+                                    </Button>
+                                  </TableCell>
+                              </TableRow> 
+                          )) :  <TableRow></TableRow>}
+                      </TableComponent>
                     </CardContent>
                 </Card>
             </Grid>
