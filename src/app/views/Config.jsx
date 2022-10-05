@@ -3,7 +3,7 @@ import React from 'react'
 import AdminTemplate from './AdminTemplate'
 import { theme } from '../themes/theme'
 import { rates, rateColumns } from '../data/ratesData'
-import TableComponent, {tRowStyles, tableCell} from '../components/TableComponent'
+import TableComponent, {tRowStyles, tCellStyles} from '../components/TableComponent'
 import { currencies, currenciesColumns } from '../data/currenciesData'
 import { AddOutlined } from '@mui/icons-material'
 
@@ -38,13 +38,13 @@ function Config() {
                         <TableComponent columns={rateColumns}>
                             {(rates.length) ? rates.map((item, key)=>( 
                                 <TableRow key={key} sx={tRowStyles}>
-                                    <TableCell sx={tableCell}>{ (key + 1 )}</TableCell>
-                                    <TableCell sx={tableCell}>{ item.C_Currency_ID }</TableCell>
-                                    <TableCell sx={tableCell}>{ item.C_Currency_ID_To }</TableCell>
-                                    <TableCell sx={tableCell}>{ item.ValidFrom }</TableCell>
-                                    <TableCell sx={tableCell}>{ item.ValidTo }</TableCell>
-                                    <TableCell sx={tableCell}>{ item.MultiplyRate }</TableCell>
-                                    <TableCell sx={tableCell}>{ item.marge }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ (key + 1 )}</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.C_Currency_ID }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.C_Currency_ID_To }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.ValidFrom }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.ValidTo }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.MultiplyRate }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.marge }</TableCell>
                                 </TableRow> 
                             )): <TableRow></TableRow>}
                         </TableComponent>                                                
@@ -61,8 +61,8 @@ function Config() {
                         <TableComponent columns={currenciesColumns}>
                             {(currencies.length) ? currencies.map((item, key)=>( 
                                 <TableRow key={key} sx={tRowStyles}>
-                                    <TableCell sx={tableCell}>{ (key + 1 )}</TableCell>
-                                    <TableCell sx={tableCell}>{ item.ISO_Code }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ (key + 1 )}</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.ISO_Code }</TableCell>
                                 </TableRow> 
                             )): <TableRow></TableRow>}
                         </TableComponent>                                                

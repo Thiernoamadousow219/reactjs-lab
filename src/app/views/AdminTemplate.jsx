@@ -1,5 +1,5 @@
 import { AccountCircleOutlined, FormatListBulletedOutlined, 
-  LogoutOutlined, NotificationsNoneOutlined, SettingsOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+  LogoutOutlined, NotificationsNoneOutlined, SettingsOutlined, ShoppingCartOutlined, StackedLineChartOutlined } from '@mui/icons-material';
 import { Box, Grid, Popover, styled, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
@@ -24,18 +24,29 @@ const SideBarStyles = {
   flexDirection: 'column'
 }
 
-const MenuItemStyles = {  
+const MenuItemStyles = { 
+  display: 'flex',
+  flexDirection: 'column', 
   '&:hover':{
     bgcolor: '#fff',
     '& > a > svg, > svg': {
       color: theme.palette.primary.main,
       fontFamily: theme.fontFamily.police.main,
       fontSize: 64
+    },
+    '& > p':{
+      color: theme.palette.primary.main,
     }
   },
   '& > a > svg, > svg':{
     color:'#fff',
     fontSize: 40
+  },
+  '& > p':{
+    fontFamily: theme.fontFamily.police.main,
+    fontSize: '14px',
+    fontWeight: '400',
+    color: '#fff',
   }
 }
 
@@ -92,28 +103,51 @@ const AdminTemplate = WrappedComponent =>{
                 direction='row'
                 bgcolor='white'>
               <Grid item xs={1} sx={SideBarStyles}> 
-                 <Link to='/admin'>
-                  <img src={logo} alt='logo' height={90} style={{paddingBottom: '100px'}} />
-                 </Link>
+                 <Typography component='div' sx={{ marginBottom: '16px', marginTop: '16px'}}>
+                  <Link to='/admin' >
+                    <img src={logo} alt='logo' height="90px" width="90px" />
+                  </Link>
+                 </Typography>
+                 
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/admin'>
                       <ShoppingCartOutlined />
                     </Link>
+                    <Typography component='p'>
+                        Opérations
+                    </Typography>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/admin/historique'>
                        <FormatListBulletedOutlined />
                     </Link>
+                    <Typography component='p'>
+                        Historique
+                    </Typography>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/admin/config'>
                       <SettingsOutlined />
                     </Link>
+                    <Typography component='p'>
+                        Configuration
+                    </Typography>
+                 </MenuItem>
+                 <MenuItem sx={MenuItemStyles}>
+                    <Link to='/admin/rapports'>
+                      <StackedLineChartOutlined />
+                    </Link>
+                    <Typography component='p'>
+                        Rapports
+                    </Typography>
                  </MenuItem>
                  <MenuItem sx={MenuItemStyles}>
                     <Link to='/'>
                         <LogoutOutlined />
                     </Link>
+                    <Typography component='p'>
+                        Déconnexion
+                    </Typography>
                  </MenuItem>
               </Grid>
   

@@ -3,7 +3,7 @@ import { Box, Button, Card, CardContent, FormControl, Grid, InputLabel, MenuItem
             Select, TableCell, TableRow, TextField, Typography } from '@mui/material'
 
 import React from 'react'
-import TableComponent from '../components/TableComponent'
+import TableComponent, {tCellStyles} from '../components/TableComponent'
 import AdminTemplate from './AdminTemplate'
 import {data, titles} from '../data/tableData'
 import { theme } from '../themes/theme'
@@ -94,7 +94,16 @@ function Home() {
                 </Typography> 
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
-                        <SoldCard amount={2000} devise='GNF'/>                        
+                        <SoldCard amount='10 000 000' devise='GNF'/>                        
+                    </Grid>
+                    <Grid item xs={6}>
+                        <SoldCard amount='110 000' devise='CAD' style={{bgcolor: '#B39CD0'}}/>                        
+                    </Grid>
+                    <Grid item xs={6}>
+                        <SoldCard amount='200 000' devise='$' style={{bgcolor: '#008F7A'}}/>                        
+                    </Grid>
+                    <Grid item xs={6}>
+                        <SoldCard amount='15 000 000' devise='XOF' style={{bgcolor: '#2C73D2'}}/>                        
                     </Grid>
                 </Grid>
             </Grid>
@@ -147,11 +156,11 @@ function Home() {
                         <TableComponent columns={titles}>
                             {(data.length) ? data.map((item, key)=>( 
                                 <TableRow key={key} sx={tRowsStyles}>
-                                    <TableCell>{ (key + 1 )}</TableCell>
-                                    <TableCell>{ item.gerant }</TableCell>
-                                    <TableCell>{ item.type }</TableCell>
-                                    <TableCell>{ item.devise }</TableCell>
-                                    <TableCell>{ item.montant }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ (key + 1 )}</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.gerant }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.type }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.devise }</TableCell>
+                                    <TableCell sx={tCellStyles}>{ item.montant }</TableCell>
                                 </TableRow> 
                             )): <TableRow></TableRow>}
                         </TableComponent>

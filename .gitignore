@@ -1,7 +1,5 @@
-
-/build-admin-tpl-with-mui/node_modules
-/build-admin-tpl-with-mui/build
-/design-pattern/node_modules
+/node_modules
+/build
 
 
 # Local Netlify folder
